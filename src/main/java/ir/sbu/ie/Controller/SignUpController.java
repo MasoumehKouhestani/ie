@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 @RequestMapping("/signup")
 public class SignUpController {
     @Inject
-    public SignUpService signUpManager;
+    public SignUpService signUpService;
 
     @PostMapping("/usersignup")
     @Consumes("application/x-www-form-urlencoded")
@@ -28,6 +28,6 @@ public class SignUpController {
         user.setEmail(email);
         user.setPosition(position);
         user.setSection(section);
-        signUpManager.userSignUp(user);
+        signUpService.userSignUp(user);
     }
 }
