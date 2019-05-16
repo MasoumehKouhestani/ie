@@ -1,0 +1,69 @@
+#modir-top-nav{
+    display: none;
+    font-size:x-small !important;
+}
+#carmand-top-nav{
+
+
+}
+#student-top-nav{
+    display: none;
+}
+
+.activenavitem{
+    background-color: #0056b3;
+}
+body{
+    background-color:#f1f3fa;
+}
+#selall{
+
+
+}
+
+.header-mord {
+    background-color: #d4edda;
+}
+
+.morddisplay{
+    margin-left:1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mdec{
+    background-color:#f1f3fa;
+}
+.dec{
+    height: 16rem;
+}
+.mdec{
+    background-color:#f1f3fa;
+}
+
+.boxinmodal{
+    margin-left:1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color:#f1f3fa;
+}
+.downloadnone{
+    display: none;
+}
+.downloadnone-you{
+    display: none;
+}
+a{
+    cursor: pointer;
+  color: white;
+}
+.sabtnarezayat{
+    display: none;
+}
+.sabtrezayat{
+    display: none;
+}

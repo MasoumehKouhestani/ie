@@ -1,0 +1,25 @@
+#modir-top-nav{
+
+  font-size:x-small !important;
+}
+#carmand-top-nav{
+  display: none;
+
+}
+#student-top-nav{
+  display: none;
+}
+.activenavitem{
+  background-color: #0056b3;
+}
+body{
+  background-color:#f1f3fa;
+}
+
+.headofinput{
+  font-size:large;
+}
+a{
+  cursor: pointer;
+  color: white;
+}

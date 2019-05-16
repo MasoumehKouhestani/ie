@@ -1,0 +1,30 @@
+/*--Body--*/
+body {
+  background-color: #f1f3fa;
+}
+
+
+i{
+  color:#7abaff;
+}
+
+
+/*--Login Label--*/
+label {
+  text-align: right;
+  width: 100%;
+  font-weight: bold;
+}
+
+/*--Warning--*/
+.warning {
+
+}
+
+
+
+.warning img {
+  width: 3%;
+}
+
+

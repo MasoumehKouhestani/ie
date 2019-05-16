@@ -1,0 +1,77 @@
+#modir-top-nav{
+
+    font-size:x-small !important;
+}
+#carmand-top-nav{
+    display: none;
+
+}
+
+.activenavitem{
+    background-color: #0056b3;
+}
+body{
+    background-color:#f1f3fa;
+}
+#selall{
+
+
+}
+
+
+.header-mord {
+    background-color: #d4edda;
+}
+/*.enteghdtext{*/
+    /*display: none;*/
+/*}*/
+/*.darkhasttext{*/
+    /*display: none;*/
+/*}*/
+/*.pishnahadtext{*/
+    /*display: none;*/
+/*}*/
+.morddisplay{
+    margin-left:1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+/*.close{*/
+    /*display: none;*/
+/*}*/
+/*.inqueue{*/
+    /*display: none;*/
+/*}*/
+/*.postponed{*/
+    /*display: none;*/
+/*}*/
+.mdec{
+    background-color:#f1f3fa;
+}
+.dec{
+    height: 16rem;
+}
+.mdec{
+    background-color:#f1f3fa;
+}
+.dec{
+    height: 16rem;
+}
+.boxinmodal{
+    margin-left:1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color:#f1f3fa;
+}
+.downloadnone{
+    display: none;
+}
+
+a{
+    cursor: pointer;
+  color: white;
+}

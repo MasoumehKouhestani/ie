@@ -1,0 +1,61 @@
+/*--Body--*/
+body {
+  background-color: #f1f3fa;
+}
+
+/*--Font--*/
+* {
+  font-family: "Comic Sans MS", serif;
+}
+
+/*--User Authentication Header--*/
+h1 {
+  color: #0056b3;
+}
+
+/*--Label--*/
+.label {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+span {
+}
+
+/*--Information Box--*/
+.person_info_container {
+  background-color: white;
+  padding: 2%;
+}
+
+.person_info {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f1f3fa;
+  text-align: right;
+  font-weight: bold;
+}
+
+#modir-top-nav {
+  font-size: x-small !important;
+}
+
+.activenavitem {
+  background-color: #0056b3;
+}
+
+.headofinput {
+  font-size: large;
+}
+
+a {
+  cursor: pointer;
+  color: white;
+}
+.t{
+  display: none;!important;
+}
+.r{
+  display: none;!important;
+}
+

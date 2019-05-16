@@ -1,0 +1,91 @@
+#modir-top-nav{
+
+  font-size:x-small !important;
+}
+#carmand-top-nav{
+  display: none;
+
+}
+
+.activenavitem{
+  background-color: #0056b3;
+}
+body{
+  background-color:#f1f3fa;
+}
+#selall{
+
+
+}
+
+.header-mord {
+  background-color: #d4edda;
+}
+
+.morddisplay{
+  margin-left:1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mdec{
+  background-color:#f1f3fa;
+}
+
+.mdec{
+  background-color:#f1f3fa;
+}
+.dec{
+  height: 17rem;
+}
+.boxinmodal{
+  margin-left:1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  background-color:#f1f3fa;
+}
+.downloadnone{
+  display: none;
+}
+
+.change-status-form{
+  margin-top: 1rem;
+  margin-left:1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  background-color:#f1f3fa;
+  height: 33rem;
+}
+.change-ref-form{
+  margin-top: 1rem;
+  margin-left:1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  background-color:#f1f3fa;
+  height: 33rem;
+}
+#change-status{
+
+}
+#change-ref{
+}
+a{
+  cursor: pointer;
+  color: white;
+}
+
+.egdam_pos_dsc,  .egdam_erja_dsc {
+      display: none;
+}

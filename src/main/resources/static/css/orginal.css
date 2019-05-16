@@ -1,0 +1,49 @@
+/*--Body--*/
+body {
+  background-color: #f1f3fa;
+}
+
+/*--logo--*/
+.logo_container {
+  margin-top: 4rem;
+  /*background-color: #fff;*/
+}
+
+#logo {
+  width: 6rem;
+}
+
+.logo_container span {
+  text-align: right;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/*--Cases to Enter--*/
+.cases {
+  border-radius: 1rem;
+  padding: 3rem;
+  background-color: white;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.cases button {
+  width: 12rem;
+}
+
+.cases a {
+  font-weight: bold;
+  color: white;
+}
+
+.cases a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.student, .employee {
+  display: none;
+}
+
+

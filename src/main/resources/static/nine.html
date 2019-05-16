@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en fr" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    مدیریت کاربران
+  </title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/nine.css" rel="stylesheet">
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/forNinejson.js"></script>
+
+</head>
+<body>
+
+<div class="row bg-primary text-white navbar fixed-top">
+  <div class="col-sm-2 text-right">
+    <a>
+      سامانه انتقادات و پیشنهاد دانشگاه شهید بهشتی
+    </a>
+  </div>
+
+
+  <div class="col-sm-8 d-flex justify-content-sm-center font-weight-bold ">
+    <ul class="nav " id="modir-top-nav">
+      <li class="nav-item"><a href="orginal.html" class="nav-link">
+        صفحه اصلی
+      </a></li>
+      <li class="nav-item"><a href="profileSetting.html" class="nav-link">
+        ویرایش پروفایل
+      </a></li>
+      <li class="nav-item"><a href="five.html" class="nav-link">
+        ثبت مورد
+      </a></li>
+      <li class="nav-item"><a href="eight.html" class="nav-link">
+        موارد ثبت شده توسط شما
+      </a></li>
+      <li class="nav-item "><a href="userAuthentication.html" class="nav-link">
+        تایید کاربران
+      </a></li>
+      <li class="nav-item"><a href="six.html" class="nav-link">
+        مشاهده موارد
+      </a></li>
+      <li class="nav-item activenavitem"><a href="nine.html" class="nav-link text-white">
+        مدیریت کاربر
+      </a></li>
+      <li class="nav-item"><a href="ten.html" class="nav-link">
+        گزارش گیری
+      </a></li>
+    </ul>
+  </div>
+  <div class="col-sm-2">
+
+        <span>
+            زهرا محمدی
+        </span>
+    <i class="fas fa-user-circle fa-2x"></i>
+  </div>
+
+</div>
+<br><br><br><br><br><br>
+
+<div class="row text-primary font-weight-bold text-right">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-3">
+
+        <span>
+            <i class="fas fa-filter"></i>
+             جست و جوی کاربر :
+        </span>
+    <br><br>
+    <form class="">
+      <div class="form-group  ">
+        &nbsp;&nbsp;
+        <input type="text" class="searchUser" placeholder=" نام کاربر ">
+        <br><br>&nbsp;&nbsp;
+        <input type="submit" class="btn btn-primary search-btn" value="جست و جو" style="">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+
+    <br/>
+
+    <div class="person_info_container">
+      <!--<div class="person_info">-->
+      <!--<span class="label">نام و نام خانوادگی:</span>-->
+      <!--<span></span><br>-->
+      <!--<span class="label">پست الکترونیکی:</span>-->
+      <!--<span></span><br>-->
+      <!--<span class="label">سمت:</span>-->
+      <!--<span></span><br>-->
+      <!--<span class="label">بخش:</span>-->
+      <!--<span></span><br>-->
+      <!--<br>-->
+      <!--<form method="post">-->
+      <!--<button type="submit" class="btn btn-success">تایید</button>-->
+      <!--<button type="submit" class="btn btn-secondary">غیرفعال</button>-->
+      <!--<input type="button" value="ویرایش پروفایل" class="btn btn-info" data-toggle="modal" data-target="#other">-->
+      <!--<button type="submit" class="btn btn-danger">حذف</button>-->
+      <!--s-->
+      <!--</form>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+
+    </div>
+
+
+
+    <!--<div class="modal" id="other">-->
+    <!--<div class="modal-dialog modal-dialog-centered modal-lg ">-->
+    <!--<div class="modal-content">-->
+    <!--<div class="modal-header">-->
+    <!--<h5 class="modal-title">-->
+    <!--ویرایش پروفایل کاربر انتخابی-->
+    <!--</h5>-->
+    <!--</div>-->
+
+    <!--<div class="modal-body">-->
+    <!--<div class="row bg-white">-->
+    <!--<div class="col-sm">-->
+    <!--<div class="boxinmodal text-sm-right ">-->
+    <!--<form name="profile_edit_form" onsubmit="return validate_profile_edit()" method="post" class="form-group">-->
+    <!--<div class="form-group">-->
+    <!--<label for="name_edit_profile">نام و نام خانوادگی:</label>-->
+    <!--<input type="text" id="name_edit_profile" name="name_edit_profile" class="form-control"-->
+    <!--placeholder="نام و نام خانوادگی "/>-->
+
+    <!--<br>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<label for="username_edit_profile">نام کاربری:</label>-->
+    <!--<input type="text" id="username_edit_profile" name="username_edit_profile" class="form-control"-->
+    <!--placeholder="نام کاربری "/>-->
+
+    <!--<br>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<label for="email_edit_profile">پست الکترونیکی:</label>-->
+    <!--<input type="email" id="email_edit_profile" name="email_edit_profile" class="form-control"-->
+    <!--placeholder="پست الکترونیکی "/>-->
+
+    <!--<br>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<label for="new_password_edit_profile">رمز عبور جدید:</label>-->
+    <!--<input type="password" id="new_password_edit_profile" name="new_password_edit_profile" class="form-control"-->
+    <!--placeholder="رمز عبور جدید "/>-->
+
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<label for="repeat_password_edit_profile">تکرار رمز عبور جدید:</label>-->
+    <!--<input type="password" id="repeat_password_edit_profile" name="repeat_password_edit_profile"-->
+    <!--class="form-control"-->
+    <!--placeholder="تکرار رمز عبور جدید "/>-->
+
+    <!--</div>-->
+    <!--<div id="edit_profile_btn_div" class="form-group">-->
+    <!--<input id="edit_profile_btn" type="submit" class="form-control btn submit-btn btn-primary" value="اعمال تغییرات"/>-->
+    <!--</div>-->
+    <!--</form>-->
+
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="modal-footer">-->
+    <!--<button type="button" class="btn btn-danger" data-dismiss="modal">-->
+    <!--بستن-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+    <!--</div>-->
+
+
+
+    <br><br><br>
+
+</body>
+</html>

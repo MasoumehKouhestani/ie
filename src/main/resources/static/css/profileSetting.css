@@ -1,0 +1,80 @@
+/*--Body--*/
+body {
+  background-color: #f1f3fa;
+}
+
+/*--Font--*/
+* {
+  font-family: "Comic Sans MS", serif;
+}
+
+/*--Row--*/
+.col-sm-6 {
+  background-color: white;
+}
+
+/*--Edit Profile Button Input--*/
+#edit_profile_btn {
+  width: 100%;
+  color: white;
+  background-color: #007bff;
+  font-size: 100%;
+}
+
+/*--Edit Profile Header--*/
+h1 {
+  color: #007bff;
+}
+
+/*--Profile Setting Label--*/
+label {
+  text-align: right;
+  width: 100%;
+  font-weight: bold;
+}
+
+/*--Warning--*/
+.warning {
+
+}
+
+.warning p {
+  float: right;
+  text-align: right;
+  width: 55%;
+  color: red;
+}
+
+.warning img {
+  width: 3%;
+}
+
+
+#modir-top-nav{
+  display: none;
+  font-size:x-small !important;
+}
+#carmand-top-nav{
+  display: none;
+
+}
+#student-top-nav{
+
+}
+.activenavitem{
+  background-color: #0056b3;
+}
+
+.headofinput{
+  font-size:large;
+}
+a{
+  cursor: pointer;
+  color: white;
+}
+
+/*--wrong submit profile editting*/
+.wrong_edit_profile_name, .wrong_edit_profile_username, .wrong_edit_profile_email,
+ .wrong_edit_profile_present_pass, .wrong_edit_profile_new_pass, .wrong_edit_profile_repeat_pass {
+  visibility: hidden;
+}

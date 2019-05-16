@@ -1,0 +1,45 @@
+/*--Body--*/
+body {
+  background-color: #f1f3fa;
+}
+
+/*--Font--*/
+* {
+  font-family: "Comic Sans MS", serif;
+}
+
+/*--Row--*/
+.col-sm-6 {
+  background-color: white;
+  margin-top: 5%;
+}
+
+/*--Sign Up Button Input--*/
+#signup_btn {
+  width: 100%;
+  color: white;
+  background-color: #007bff;
+  font-size: 100%;
+}
+
+/*--Sign Up Header--*/
+i {
+  color: #007bff;
+}
+
+/*--Sign Up Label--*/
+label {
+  text-align: right;
+  width: 100%;
+  font-weight: bold;
+}
+/*--Type Select--*/
+select[name=position] {
+  width: 100%;
+}
+
+/*--Section Select--*/
+select[name=section] {
+  width: 100%;
+}
+

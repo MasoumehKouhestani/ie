@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en fr" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ثبت نام</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrapValidator.css"/>
+  <link href="css/signup.css" rel="stylesheet">
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
+
+</head>
+<body class="container-fluid text-right">
+<br><br><br>
+<!--Sign Up Form-->
+
+<div class="row">
+  <div class="col-sm-2">
+  </div>
+
+  <div class="col-sm-8 bg-white">
+    <p class="text-center text-primary font-weight-bold" style="padding-top: 1rem;font-size: larger">ثبت نام در سامانه انتقادات و پیشنهادات دانشگاه شهید بهشتی</p>
+    <br>
+    <form id="sign_form"  method="post" class="form-group form-horizontal"
+          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+      <div class="form-group">
+        <label for="name_signup"><i class="fas fa-user-alt"></i>
+          نام و نام خانوادگی:</label>
+        <input type="text" id="name_signup" name="name" class="form-control"
+               placeholder="نام و نام خانوادگی خود را وارد کنید"
+               data-bv-notempty="true"
+               data-bv-notempty-message="نام و نام خانودگی نمی تواند خالی باشد!"/>
+
+        <br>
+      </div>
+      <div class="form-group">
+        <label for="username_signup"><i class="fas fa-address-card"></i>
+          نام کاربری:</label>
+        <input type="text" id="username_signup"  class="form-control "
+               placeholder="نام کاربری خود را وارد کنید" name="username"
+               data-bv-notempty="true"
+               data-bv-notempty-message=" نام کاربری نمی تواند خالی باشد! "
+
+               data-bv-stringlength="true"
+               data-bv-stringlength-min="6"
+               data-bv-stringlength-max="30"
+               data-bv-stringlength-message="   نام کاربری باید بیشتز از شش و کمتر از 30 کاراکتر باشد!"
+
+               data-bv-regexp="true"
+               data-bv-regexp-regexp="^[a-zA-Z0-9]+$"
+               data-bv-regexp-message="  نام کاربری فقط می تواند شامل حروف و عدد باشد!   "
+
+               data-bv-different="true"
+               data-bv-different-field="password"
+               data-bv-different-message=" نام کاربری و رمز نمی تواند یکسان باشد!  "/>
+
+        <br>
+      </div>
+      <div class="form-group">
+        <label for="email_signup"><i class="fas fa-envelope"></i>
+          پست الکترونیکی:</label>
+        <input type="email" id="email_signup" class="form-control " placeholder="پست الکترونیکی خود را وارد کنید"
+               name="email"
+               data-bv-notempty="true"
+               data-bv-notempty-message=" ایمیل نمی تواند خالی باشد! "
+
+               data-bv-emailaddress="true"
+               data-bv-emailaddress-message=" ادرس ایمیل معتبر نیست! "/>
+
+        <br>
+      </div>
+      <div class="form-group">
+        <label for="password_signup"><i class="fas fa-lock"></i>
+          رمز عبور:</label>
+        <input type="password" id="password_signup"  class="form-control warning2"
+               placeholder="رمز عبور خود را وارد کنید"
+               name="password"
+               data-bv-notempty="true"
+               data-bv-notempty-message=" رمز نمی تواند خالی باشد! "
+
+               data-bv-stringlength="true"
+               data-bv-stringlength-min="8"
+               data-bv-stringlength-message=" رمز باید حداقل هشت کاراکتر باشد! "
+
+               data-bv-different="true"
+               data-bv-different-field="username"
+               data-bv-different-message=" نام کاربری و رمز نمی تواند یکسان باشد! "
+        />
+
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-crosshairs"></i>
+          سمت:
+        </label><br>
+        <select class="form-control" name="position">
+          <option value="student">
+            دانشجو
+          </option>
+          <option value="modiriat">
+            مدیریت
+          </option>
+          <option value="employee">
+            کارمند
+          </option>
+          <option value="professor">
+            استاد
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-directions"></i>
+          بخش:</label><br>
+        <select class="form-control" name="section">
+          <option value="null">
+            --
+          </option>
+          <option value="modiriat">
+            مدیریت
+          </option>
+          <option value="tamirat">
+            تعمیرات
+          </option>
+          <option value="modirofclass">
+            مدیریت کلاسها
+          </option>
+          <option value="amozesh">
+            آموزش
+          </option>
+          <option value="اساتید">
+            اساتید
+          </option>
+          <option value="clean">
+            نظافت
+          </option>
+          <option value="دبیرخانه">
+            دبیرخانه
+          </option>
+          <option value="azmayeshgah">
+            آزمایشگاه ها
+          </option>
+          <option value="library">
+            کتابخانه
+          </option>
+          <option value="site">
+            سایت
+          </option>
+        </select>
+      </div>
+      <div id="signup_btn_div" class="form-group">
+        <input id="signup_btn" type="submit" class="form-control btn submit-btn" value="ثبت نام"/>
+      </div>
+    </form>
+    <p class="text-right text-secondary font-weight-bold"><a href="login.html" class="text-secondary" >آیا قبلا عضو شدید ؟ کلیک کنید!</a></p>
+  </div>
+</div>
+<br><br><br>
+<script>
+  $(document).ready(function() {
+    $('#sign_form').bootstrapValidator();
+  });
+</script>
+</body>
+</html>
