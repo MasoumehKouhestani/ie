@@ -26,14 +26,14 @@
   <div class="col-sm-8 bg-white">
     <p class="text-center text-primary font-weight-bold" style="padding-top: 1rem;font-size: larger">ثبت نام در سامانه انتقادات و پیشنهادات دانشگاه شهید بهشتی</p>
     <br>
-    <form id="sign_form"  method="post" class="form-group form-horizontal"
+    <form id="sign_form"  method="post" action="/signup/usersignup" class="form-group form-horizontal"
           data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
       <div class="form-group">
-        <label for="name_signup"><i class="fas fa-user-alt"></i>
+        <label for="name"><i class="fas fa-user-alt"></i>
           نام و نام خانوادگی:</label>
-        <input type="text" id="name_signup" name="name" class="form-control"
+        <input type="text" id="name" name="name" class="form-control"
                placeholder="نام و نام خانوادگی خود را وارد کنید"
                data-bv-notempty="true"
                data-bv-notempty-message="نام و نام خانودگی نمی تواند خالی باشد!"/>
@@ -41,9 +41,9 @@
         <br>
       </div>
       <div class="form-group">
-        <label for="username_signup"><i class="fas fa-address-card"></i>
+        <label for="username"><i class="fas fa-address-card"></i>
           نام کاربری:</label>
-        <input type="text" id="username_signup"  class="form-control "
+        <input type="text" id="username"  class="form-control "
                placeholder="نام کاربری خود را وارد کنید" name="username"
                data-bv-notempty="true"
                data-bv-notempty-message=" نام کاربری نمی تواند خالی باشد! "
@@ -64,9 +64,9 @@
         <br>
       </div>
       <div class="form-group">
-        <label for="email_signup"><i class="fas fa-envelope"></i>
+        <label for="email"><i class="fas fa-envelope"></i>
           پست الکترونیکی:</label>
-        <input type="email" id="email_signup" class="form-control " placeholder="پست الکترونیکی خود را وارد کنید"
+        <input type="email" id="email" class="form-control " placeholder="پست الکترونیکی خود را وارد کنید"
                name="email"
                data-bv-notempty="true"
                data-bv-notempty-message=" ایمیل نمی تواند خالی باشد! "
@@ -77,9 +77,9 @@
         <br>
       </div>
       <div class="form-group">
-        <label for="password_signup"><i class="fas fa-lock"></i>
+        <label for="password"><i class="fas fa-lock"></i>
           رمز عبور:</label>
-        <input type="password" id="password_signup"  class="form-control warning2"
+        <input type="password" id="password"  class="form-control warning2"
                placeholder="رمز عبور خود را وارد کنید"
                name="password"
                data-bv-notempty="true"
@@ -99,7 +99,7 @@
         <label><i class="fas fa-crosshairs"></i>
           سمت:
         </label><br>
-        <select class="form-control" name="position">
+        <select class="form-control" id="position" name="position">
           <option value="student">
             دانشجو
           </option>
@@ -117,7 +117,7 @@
       <div class="form-group">
         <label><i class="fas fa-directions"></i>
           بخش:</label><br>
-        <select class="form-control" name="section">
+        <select class="form-control" id="section" name="section">
           <option value="null">
             --
           </option>
