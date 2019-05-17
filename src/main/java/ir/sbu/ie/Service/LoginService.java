@@ -22,8 +22,7 @@ public class LoginService {
         if (resultUser == null) {
             return false;
         } else {
-            if (resultUser.getPassword().equals(user.getPassword())) {
-//
+            if (resultUser.getPassword().equals(user.getPassword()) && resultUser.isConfirmed()) {
                 return true;
             }
         }

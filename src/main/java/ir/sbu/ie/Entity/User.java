@@ -17,6 +17,16 @@ public class User {
     String username;
     @Column(name = "password")
     String password;
+    @Column(name = "confirmed")
+    boolean confirmed;
+
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
+    }
 
     public String getUsername() {
         return username;
