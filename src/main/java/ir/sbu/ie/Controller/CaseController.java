@@ -36,8 +36,8 @@ public class CaseController {
 
         boolean result = caseService.saveCase(referto, newCaseEntity);
         if (result){
-            return "redirect:/five.html";
+            return "redirect:/fiveForStudent.html";
         }
-        return "redirect:/wrongreferTo.html";
+        return "redirect:/worngreferTo.html";
     }
 }
