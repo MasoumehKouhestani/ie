@@ -35,11 +35,6 @@ public class SignUpController {
     @Inject
     public SignUpService signUpService;
 
-//    @Context
-//    public HttpServletRequest request;
-//    @Context
-//    public HttpServletResponse response;
-
     @PostMapping("/usersignup")
     @Consumes("application/x-www-form-urlencoded")
     @Produces("text/html")
