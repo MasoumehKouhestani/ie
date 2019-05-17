@@ -104,7 +104,7 @@
       ثبت مورد
 
     </p>
-    <form id="form"  method="post" class="form-group form-horizontal"
+    <form id="form"  method="post" action="/case/caseSend" class="form-group form-horizontal"
           data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
@@ -178,13 +178,13 @@
 
           ؟ </p>
         <div class="form-group">
-        <input class="form-control var5" type="text" name="referenceperson" id="referto" name="referto" placeholder="نام ونام خانوادگی آن فرد "  data-bv-notempty="true"
+        <input class="form-control var5" type="text" id="referto" name="referto" placeholder="نام ونام خانوادگی آن فرد "  data-bv-notempty="true"
                data-bv-notempty-message=" نام ارجاع گیرنده نمی تواند خالی باشد! "
 
                data-bv-stringlength="true"
-               data-bv-stringlength-min="6"
+               data-bv-stringlength-min="3"
                data-bv-stringlength-max="30"
-               data-bv-stringlength-message="   نام ارجاع گیرنده باید بیشتز از شش و کمتر از 30 کاراکتر باشد!"
+               data-bv-stringlength-message="   نام ارجاع گیرنده باید بیشتز از سه و کمتر از 30 کاراکتر باشد!"
 
                data-bv-regexp="true"
                data-bv-regexp-regexp="^[a-zA-Z0-9]+$"
