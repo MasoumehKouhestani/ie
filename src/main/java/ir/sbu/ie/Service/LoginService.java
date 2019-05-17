@@ -5,6 +5,7 @@ import ir.sbu.ie.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 @Service
 public class LoginService {
@@ -13,14 +14,14 @@ public class LoginService {
     private UserRepository userRepository;
 
 
-    public boolean userLogin(User user) {
+    public boolean userLogin(User user, HttpSession session) {
         User resultUser;
         resultUser = userRepository.findByEmail(user.getEmail());
         if (resultUser == null) {
             return false;
         } else {
             if (resultUser.getPassword().equals(user.getPassword())) {
-                user = resultUser;
+                session.setAttribute("id", user.getId());
                 return true;
             }
         }

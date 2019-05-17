@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.Produces;
@@ -23,6 +24,8 @@ public class LoginController {
 
     @Inject
     public LoginService loginService;
+    @Context
+    public HttpServletRequest request;
 
     @PostMapping("/userlogin")
     @Consumes("application/x-www-form-urlencoded")
@@ -31,10 +34,13 @@ public class LoginController {
         User user = new User();
         user.setPassword(password);
         user.setEmail(email);
-        boolean result = loginService.userLogin(user);
+
+        HttpSession session = request.getSession();
+
+        boolean result = loginService.userLogin(user, session);
         if (result)
             return "redirect:/orginal.html";
-        return "redirect:/login.html";
+        return "redirect:/worgPassOrEmail.html";
     }
 
 }
