@@ -98,7 +98,7 @@
 <div class="row ">
   <div class="col-sm-2">
   </div>
-  <div class="col-sm-8 bg-white text-right">
+  <div class="col-sm-8 bg-white text-right rounded">
     <p class="text-primary headofinput">
       <i class="fas fa-sticky-note"></i>
       ثبت مورد
@@ -111,10 +111,10 @@
       <div class="form-group">
         <p class="font-weight-bold headofinput">
           <b class="text-primary ">1.</b>
-          پروژه شما مربوط به کدام بخش است
+          مورد شما مربوط به کدام بخش است
 
           ؟ </p>
-        <select class="form-control" name="section">
+        <select class="form-control" name="section" id="section">
           <option value="null">
             --
           </option>
@@ -155,7 +155,7 @@
           نوع مورد خود را مشخص کنید
 
           .</p>
-        <select class="form-control" name="type">
+        <select class="form-control" name="type" id="type">
           <option value="pishnahad">
             پیشنهاد
           </option>
@@ -178,7 +178,7 @@
 
           ؟ </p>
         <div class="form-group">
-        <input class="form-control var5" type="text" name="referenceperson" id="refer_to" placeholder="نام ونام خانوادگی آن فرد "  data-bv-notempty="true"
+        <input class="form-control var5" type="text" name="referenceperson" id="referto" name="referto" placeholder="نام ونام خانوادگی آن فرد "  data-bv-notempty="true"
                data-bv-notempty-message=" نام ارجاع گیرنده نمی تواند خالی باشد! "
 
                data-bv-stringlength="true"
@@ -199,17 +199,14 @@
 
           .</p>
         <div class="form-group">
-        <input class="form-control var5" id="topic_case" type="text" name="mozo" placeholder="موضوع" data-bv-notempty="true"
+        <input class="form-control var5" id="topic" type="text" name="topic" placeholder="موضوع" data-bv-notempty="true"
                data-bv-notempty-message=" موضوع نمی تواند خالی باشد! "
 
                data-bv-stringlength="true"
                data-bv-stringlength-min="6"
                data-bv-stringlength-max="30"
                data-bv-stringlength-message="  موضوع باید بیشتز از شش و کمتر از 30 کاراکتر باشد!"
-
-               data-bv-regexp="true"
-               data-bv-regexp-regexp="^[a-zA-Z0-9]+$"
-               data-bv-regexp-message="  موضوع فقط می تواند شامل حروف و عدد باشد!   ">
+>
         </div>
 
         <br>
@@ -219,7 +216,7 @@
           توضیحات راجب مورد خود را شرح بدهید
           . </p>
         <div class="form-group">
-        <textarea class="form-control var5" id="description_case" rows="7" name="tozihatcase" data-bv-notempty="true"
+        <textarea class="form-control var5" id="description" rows="7" name="description" data-bv-notempty="true"
                   data-bv-notempty-message="توضیحات نمی تواند خالی باشد! "
         ></textarea>
 
@@ -230,7 +227,7 @@
           <b class="text-primary ">6.</b>
           در صورت نیاز فایل مورد نظر خود را پیوست کنید
           . </p>
-        <input type="file" class="form-control " name="filepeyvast">
+        <input type="file" class="form-control "  id="file" name="file">
         <br>
         <input type="submit" class="form-control btn btn-primary" value="ثبت مورد ">
       </div>
