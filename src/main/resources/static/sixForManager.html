@@ -3,16 +3,19 @@
 <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/eight.css" rel="stylesheet">
+    <link href="css/six.css" rel="stylesheet">
     <script src="js/popper.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/program.js"></script>
-    <script src="js/forEightjson.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/forJson.js"></script>
+
+
+
     <meta charset="UTF-8">
-    <title>مشاهده موارد ثبت شده توسط شما </title>
+    <title>مشاهده موارد </title>
 </head>
-<body class="container-fluid ">
+<body class="container-fluid " id="bodysix">
 <div  class="row bg-primary text-white navbar fixed-top">
     <div class="col-sm-2 text-right">
         <a>
@@ -24,68 +27,37 @@
     <div class="col-sm-8 d-flex justify-content-sm-center font-weight-bold ">
 
         <ul class="nav " id="modir-top-nav">
-            <li class="nav-item"><a href="orginal.html" class="nav-link">
+            <li class="nav-item "><a href="orginal.html" class="nav-link">
                 صفحه اصلی
             </a></li>
-            <li class="nav-item"><a href="profileSetting.html" class="nav-link">
+            <li class="nav-item"><a href="profileSettingForManager.html" class="nav-link">
                 ویرایش پروفایل
             </a></li>
-            <li class="nav-item "><a class="nav-link" href="five.html">
+            <li class="nav-item "><a class="nav-link " href="fiveForManager.html">
                 ثبت مورد
             </a></li>
-            <li class="nav-item activenavitem"><a href="eight.html" class="text-white nav-link">
+            <li class="nav-item"><a href="eightForManager.html" class="nav-link">
                 موارد ثبت شده توسط شما
             </a></li>
             <li class="nav-item"><a href="userAuthentication.html" class="nav-link">
                 تایید کاربران
             </a></li>
-            <li class="nav-item "><a href="six.html" class="nav-link">
+            <li class="nav-item activenavitem"><a href="sixForManager.html" class="nav-link text-white">
                 مشاهده موارد
             </a></li>
-            <li class="nav-item"><a href="nine.html" class="nav-link">
+            <li class="nav-item"><a href="nine.html" class="nav-link ">
                 مدیریت کاربر
             </a></li>
             <li class="nav-item"><a href="ten.html" class="nav-link">
                 گزارش گیری
             </a></li>
         </ul>
-        <ul class="nav " id="carmand-top-nav">
-            <li class="nav-item"><a href="orginal.html" class="nav-link">
-                صفحه اصلی
-            </a></li>
-            <li class="nav-item"><a href="profileSetting.html" class="nav-link">
-                ویرایش پروفایل
-            </a></li>
-            <li class="nav-item "><a class="nav-link" href="five.html">
-                ثبت مورد
-            </a></li>
-            <li class="nav-item activenavitem"><a href="eight.html" class="text-white nav-link">
-                موارد ثبت شده توسط شما
-            </a></li>
-            <li class=" nav-item "><a href="six.html" class="nav-link">
-                مشاهده موارد
-            </a></li>
-        </ul>
-        <ul class="nav " id="student-top-nav">
-            <li class="nav-item"><a href="orginal.html" class="nav-link">
-                صفحه اصلی
-            </a></li>
-            <li class="nav-item"><a href="profileSetting.html" class="nav-link">
-                ویرایش پروفایل
-            </a></li>
-            <li class="nav-item "><a href="five.html" class="nav-link">
-                ثبت مورد
-            </a></li>
-            <li class="nav-item activenavitem "><a href="eight.html" class="nav-link text-white">
-                موارد ثبت شده توسط شما
-            </a></li>
 
-        </ul>
     </div>
     <div class="col-sm-2 font-weight-bold">
 
-        <span  >
-          نادر نادری
+        <span >
+            زهرا محمدی
         </span>
         <i class="fas fa-user-circle fa-2x"></i>
     </div>
@@ -93,43 +65,28 @@
 </div>
 <br><br><br><br><br><br>
 
+
 <div class="row text-primary font-weight-bold text-right">
     <div class="col-sm-1"></div>
-    <div class="col-sm-3">
+    <div class="col-sm">
 
-        <span>
+        <p>
             <i class="fas fa-filter"></i>
-          انتخاب وضعیت
+            انتخاب کنید :
 
-        :</span>
-        <br><br>
-        <form class="">
+        </p>
+        <form class="form-inline">
             <div class="form-group  ">
-
                 <select class="form-control">
-                    <option value="open">
-                        باز
+                    <option value="you">
+                        مورد های مربوط به شما
                     </option>
-                    <option value="close">
-                       بسته
-                    </option>
-                    <option value="inqueue">
-                       در حال بررسی
-                    </option>
-                    <option value="delay">
-                        تعویق
+                    <option value="all">
+                        همه مورد ها
                     </option>
                 </select>
-                <br>
-                <span>
-                    <i class="fas fa-filter"></i>
-                    ارجاع شده به
-
-                    :</span>
-                <br>
-                 &nbsp; &nbsp;<input type="text" class="form-control " placeholder="نام و نام خانوادگی فرد">
-                <br>
-                <input type="submit" class="btn btn-primary form-control" value="فیلتر">
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="submit" class="btn btn-primary form-control" id="filter" value="فیلتر">
             </div>
         </form>
         <br>
@@ -137,12 +94,10 @@
     </div>
 </div>
 <br><br><br>
-
-
-<div class="row " >
+<div class="row  " id="selmyself">
     <div class="col-sm-1">
     </div>
-    <div class="col-sm-10 bg-white " id="eightcase">
+    <div class="col-sm-10 bg-white " id="my">
         <br>
 
         <p class="text-primary font-weight-bold text-right" >
@@ -157,86 +112,87 @@
             <!--<span class="text-primary">-->
                 <!--موضوع-->
            <!--: </span>-->
-                        <!--<span class="titel">-->
-                <!---->
+            <!--<span class="title">-->
             <!--</span>-->
                     <!--</div>-->
                     <!--<br>-->
-                    <!--<div class="dec text-right text-secondary">-->
-
-                      <!---->
-                        <!---->
+                    <!--<div class="dec text-right text-secondary tozihat">-->
 
                     <!--</div>-->
                     <!--<br>-->
-                    <!--<p class="file-down text-right font-weight-bold">-->
+                    <!--<div class="file-down text-right font-weight-bold">-->
 
-                        <!--<input type="submit" class="btn btn-info btn-sm down-you" value="دانلود فایل پیوست">-->
+                        <!--<input type="submit" class="btn btn-info btn-sm down" value="دانلود فایل پیوست">-->
 
 
 
                         <!--<input type="submit" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#other" value="دیدن توضیحات سایرین">-->
 
+                    <!--<p class="text-danger text-right downloadnone">-->
 
-                    <!--</p>-->
-                    <!--<p class="text-danger text-right downloadnone-you ">-->
                         <!--<i class="fas fa-exclamation-triangle"></i>-->
                         <!--فایلی برای دانلود وجود ندارد-->
                         <!--! </p>-->
+                    <!--</div>-->
+
+
+
+
+
 
                 <!--</div>-->
 
                 <!--<div  class=" font-weight-bold col-sm-3 text-right header-mord">-->
                     <!--<br>-->
-                    <!--<span class="text-left text-primary">-->
+  <!--<span class="text-left text-primary">-->
       <!--نوع مورد :-->
   <!--</span>-->
-                    <!--<span class="text-danger shekayattext">-->
+    <!--<span class="text-danger shekayattext">-->
 
         <!--شکایت-->
   <!--&nbsp;&nbsp;-->
     <!--</span>-->
-                    <!--<span class="text-success pishnahadtext">-->
+        <!--<span class="text-success pishnahadtext">-->
   <!--پیشهاد-->
   <!--&nbsp;&nbsp;-->
     <!--</span>-->
-                    <!--<span class="text-warning enteghdtext">-->
+        <!--<span class="text-warning enteghdtext">-->
  <!--انتقاد-->
   <!--&nbsp;&nbsp;-->
     <!--</span>-->
-                    <!--<span class="text-info darkhasttext">-->
+        <!--<span class="text-info darkhasttext">-->
   <!--درخواست-->
   <!--&nbsp;&nbsp;-->
     <!--</span>-->
                     <!--<br><br>-->
-                    <!--<span class="text-left text-primary">-->
+     <!--<span class="text-left text-primary">-->
    <!--مربوط به بخش:-->
  <!--</span>-->
-                    <!--<span>-->
-    <!--تعمیرات-->
+    <!--<span class="section">-->
+
     <!--</span>-->
                     <!--<br><br>-->
-                    <!--<span class="text-left text-primary">-->
+     <!--<span class="text-left text-primary">-->
     <!--ارسال کننده-->
  <!--:</span>-->
-                    <!--<span>-->
-        <!--علی علوی-->
+    <!--<span class="sender">-->
+
     <!--</span>-->
                     <!--<br><br>-->
-                    <!--<span class="text-left text-primary">-->
+     <!--<span class="text-left text-primary">-->
   <!--ارجاع به-->
  <!--:</span>-->
-                    <!--<span>-->
-<!--نقی نقوی-->
+    <!--<span class="referto">-->
+
     <!--</span>-->
                     <!--<br><br>-->
-                    <!--<span class="text-left text-primary">-->
+     <!--<span class="text-left text-primary">-->
 <!--وضعیت-->
  <!--:</span>-->
-                    <!--<span class="text-danger open ">-->
+    <!--<span class="text-danger open ">-->
 <!--باز-->
     <!--</span>-->
-                    <!--<span class="text-success close">-->
+     <!--<span class="text-success close">-->
 <!--بسته-->
     <!--</span>-->
                     <!--<span class="text-info inqueue">-->
@@ -246,19 +202,48 @@
 <!--تعویق-->
     <!--</span>-->
                     <!--<br><br>-->
-                    <!--<span class="text-left text-primary">-->
+                                         <!--<span class="text-left text-primary">-->
 <!--تاریخ ثبت-->
  <!--:</span>-->
-                    <!--<span >-->
+    <!--<span class="startdate" >-->
 
     <!--</span>-->
                     <!--<br><br>-->
-                    <!--<span class="text-left text-primary">-->
+                         <!--<span class="text-left text-primary">-->
 <!--تاریخ بسته شدن-->
  <!--:</span>-->
-                    <!--<span >-->
-        <!---->
+    <!--<span class="enddate">-->
+
     <!--</span>-->
+
+
+
+                    <!--<br><br>-->
+
+                    <!--<a href="seven.html" class="text-white btn-primary btn btn-block">-->
+                        <!--اقدام-->
+                    <!--</a>-->
+                    <!--<br>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <div class="col-sm-1">
+    </div>
+</div>
+
+
+
+<div class="row  " id="selall">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10 bg-white " id="all">
+        <br>
+
+        <p class="text-primary font-weight-bold text-right" >
+            <i class="fas fa-clipboard-list"></i>
+            لیست همه موارد :</p>
+
         <!--<div class=" morddisplay">-->
             <!--<div class="row ">-->
                 <!--<div class="col-sm-9 mdec">-->
@@ -375,23 +360,9 @@
 
                     <!--<br><br>-->
 
-                   <!--<form class="form-group form-inline">-->
-                       <!--<button class="form-control btn btn-success btn-lgs rezayat-btn " >-->
-                           <!--&nbsp;&nbsp; رضایت&nbsp;&nbsp;-->
-                       <!--</button>-->
-                       <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-                       <!--<button class="form-control btn btn-danger narezayat-btn ">-->
-                          <!--عدم رضایت-->
-                       <!--</button>-->
-                   <!--</form>-->
-                    <!--<br>-->
-                    <!--<div class="text-right ">-->
-                       <!--<b class="text-success sabtrezayat"> رضایت شما ثبت شد-->
-                       <!--</b>-->
-                        <!--<b class="text-danger sabtnarezayat">-->
-                            <!--عدم رضایت شما ثبت شد-->
-                        <!--</b>-->
-                         <!--</div>-->
+                    <!--<a href="seven.html" class="text-white btn-primary btn btn-block">-->
+                        <!--اقدام-->
+                    <!--</a>-->
                     <!--<br>-->
                 <!--</div>-->
             <!--</div>-->
@@ -400,7 +371,6 @@
     <div class="col-sm-1">
     </div>
 </div>
-
 
 
 
@@ -421,10 +391,10 @@
                     <!--<div class="col-sm">-->
                         <!--<div class="boxinmodal text-sm-right ">-->
                             <!--<p class="text-primary font-weight-bold">-->
-                                <!--احمد احمدی-->
+
                             <!--</p>-->
                             <!--<p class="text-secondary">-->
-                                <!--مشکل از قسمت شوفاژخونه است-->
+
                             <!--</p>-->
 
                             <!--<br>-->
@@ -433,11 +403,12 @@
                         <!--<br>-->
                         <!--<div class="boxinmodal text-sm-right ">-->
                             <!--<p class="text-primary font-weight-bold">-->
-                                <!--محمد محمدی-->
+
                             <!--</p>-->
                             <!--<p class="text-secondary">-->
-                                <!--لطفا دیگ شوفاژخونه را تعمیر کنید-->
+
                             <!--</p>-->
+
                             <!--<br>-->
 
                         <!--</div>-->
@@ -454,19 +425,7 @@
         <!--</div>-->
     <!--</div>-->
 <!--</div>-->
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
+<!--</div>-->
 
 
 

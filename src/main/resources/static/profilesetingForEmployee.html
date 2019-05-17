@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en fr" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ویرایش پروفایل</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/profileSetting.css" rel="stylesheet">
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/validateFields.js"></script>
+  <script src="js/main.js"></script>
+
+</head>
+<body>
+
+<div class="row bg-primary text-white navbar fixed-top">
+  <div class="col-sm-2 text-right">
+    <a>
+      سامانه انتقادات و پیشنهاد دانشگاه شهید بهشتی
+    </a>
+  </div>
+
+
+  <div class="col-sm-8 d-flex justify-content-sm-center font-weight-bold ">
+
+    <ul class="nav " id="carmand-top-nav">
+      <li class="nav-item"><a href="orginalEmployee.html" class="nav-link">
+        صفحه اصلی
+      </a></li>
+      <li class="nav-item activenavitem"><a href="profilesetingForEmployee.html" class="nav-link">
+        ویرایش پروفایل
+      </a></li>
+      <li class="nav-item"><a href="fiveForEmployee.html" class="nav-link">
+        ثبت مورد
+      </a></li>
+      <li class="nav-item"><a href="egitForEmployee.html" class="nav-link">
+        موارد ثبت شده توسط شما
+      </a></li>
+      <li class="nav-item"><a href="sixForEmployee.html" class="nav-link">
+        مشاهده موارد
+      </a></li>
+    </ul>
+  </div>
+  <div class="col-sm-2">
+
+        <span>
+            زهرا محمدی
+        </span>
+    <i class="fas fa-user-circle fa-2x"></i>
+  </div>
+
+</div>
+<br><br><br><br><br><br>
+
+
+<!--Edit Profile-->
+<div class="row">
+  <div class="col-sm-2">
+  </div>
+
+  <div class="col-sm-8 shadow-lg bg-white">
+    <br>
+    <form name="profile_edit_form" onsubmit="return validate_profile_edit()" method="post" class="form-group">
+      <div class="form-group">
+        <label for="name_edit_profile"><i class="fas fa-user-circle"></i>
+          نام و نام خانوادگی:
+        </label>
+        <input type="text" id="name_edit_profile" name="name_edit_profile" class="form-control warning3"
+               placeholder="نام و نام خانوادگی خود را وارد کنید"/>
+        <div class="warning">
+          <p class="wrong_edit_profile_name">نام و نام خانوادگی وارد شده معتبر نیست!</p>
+          <img class="wrong_edit_profile_name" src="img/alarm.png">
+        </div>
+        <br>
+      </div>
+      <div class="form-group">
+        <label for="username_edit_profile"><i class="fas fa-address-card"></i>
+          نام کاربری:</label>
+        <input type="text" id="username_edit_profile" name="username_edit_profile" class="form-control warning3"
+               placeholder="نام کاربری خود را وارد کنید"/>
+        <div class="warning">
+          <p class="wrong_edit_profile_username">نام کاربری وارد شده معتبر نیست!</p>
+          <img class="wrong_edit_profile_username" src="img/alarm.png">
+        </div>
+        <br>
+      </div>
+      <div class="form-group">
+        <label for="email_edit_profile"><i class="fas fa-envelope"></i>
+          پست الکترونیکی:</label>
+        <input type="email" id="email_edit_profile" name="email_edit_profile" class="form-control warning3"
+               placeholder="پست الکترونیکی خود را وارد کنید"/>
+        <div class="warning">
+          <p class="wrong_edit_profile_email">پست الکترونیکی وارد شده معتبر نیست!</p>
+          <img class="wrong_edit_profile_email" src="img/alarm.png">
+        </div>
+        <br>
+      </div>
+      <div class="form-group">
+        <label for="present_password_edit_profile"><i class="fas fa-lock"></i>
+          رمز عبور فعلی:</label>
+        <input type="password" id="present_password_edit_profile" name="present_password_edit_profile"
+               class="form-control warning3"
+               placeholder="رمز عبور فعلی خود را وارد کنید"/>
+        <div class="warning">
+          <p class="wrong_edit_profile_present_pass">رمز عبور فعلی وارد شده صحیح نیست!</p>
+          <img class="wrong_edit_profile_present_pass" src="img/alarm.png">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="new_password_edit_profile"><i class="fas fa-lock"></i>
+          رمز عبور جدید:</label>
+        <input type="password" id="new_password_edit_profile" name="new_password_edit_profile" class="form-control warning3"
+               placeholder="رمز عبور جدید خود را وارد کنید"/>
+        <div class="warning">
+          <p class="wrong_edit_profile_new_pass">رمز عبور جدید وارد شده معتبر نیست!</p>
+          <img class="wrong_edit_profile_new_pass" src="img/alarm.png">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="repeat_password_edit_profile"><i class="fas fa-lock"></i>
+          تکرار رمز عبور جدید:</label>
+        <input type="password" id="repeat_password_edit_profile" name="repeat_password_edit_profile"
+               class="form-control warning3"
+               placeholder="رمز عبور جدید خود را تکرار کنید"/>
+        <div class="warning">
+          <p class="wrong_edit_profile_repeat_pass">تکرار رمز عبور صحیح نیست!</p>
+          <img class="wrong_edit_profile_repeat_pass" src="img/alarm.png">
+        </div>
+      </div>
+      <div id="edit_profile_btn_div" class="form-group">
+        <input id="edit_profile_btn" type="submit" class="form-control btn submit-btn font-weight-bold warning3" value="اعمال تغییرات"/>
+      </div>
+    </form>
+  </div>
+</div>
+<br><br><br>
+</body>
+</html>

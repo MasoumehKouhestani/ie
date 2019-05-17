@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en fr" dir="rtl">
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrapValidator.css"/>
+  <link href="css/five.css" rel="stylesheet">
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+  <script src="js/app.js"></script>
+  <meta charset="UTF-8">
+  <title>
+    ثبت مورد
+  </title>
+</head>
+<body class="container-fluid ">
+<div class="row bg-primary text-white navbar fixed-top">
+  <div class="col-sm-2 text-right">
+    <a>
+      سامانه انتقادات و پیشنهاد دانشگاه شهید بهشتی
+    </a>
+  </div>
+
+
+  <div class="col-sm-8 d-flex justify-content-sm-center font-weight-bold ">
+
+    <ul class="nav " id="modir-top-nav">
+      <li class="nav-item"><a href="orginal.html" class="nav-link ">
+        صفحه اصلی
+      </a></li>
+      <li class="nav-item"><a href="profileSettingForManager.html" class="nav-link ">
+        ویرایش پروفایل
+      </a></li>
+      <li class="nav-item activenavitem rounded"><a href="fiveForManager.html" class="nav-link text-white">
+        ثبت مورد
+      </a></li>
+      <li class="nav-item"><a href="eightForManager.html" class="nav-link ">
+        موارد ثبت شده توسط شما
+      </a></li>
+      <li class="nav-item"><a href="userAuthentication.html" class="nav-link">
+        تایید کاربران
+      </a></li>
+      <li class="nav-item"><a href="sixForManager.html" class="nav-link ">
+        مشاهده موارد
+      </a></li>
+      <li class="nav-item for"><a href="nine.html" class="nav-link ">
+        مدیریت کاربر
+      </a></li>
+      <li class="nav-item"><a href="ten.html" class="nav-link ">
+        گزارش گیری
+      </a></li>
+    </ul>
+
+  </div>
+  <div class="col-sm-2">
+
+        <span>
+            زهرا محمدی
+        </span>
+    <i class="fas fa-user-circle fa-2x"></i>
+  </div>
+
+</div>
+<br><br><br><br><br><br>
+<div class="row ">
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-8 bg-white text-right rounded">
+    <p class="text-primary headofinput">
+      <i class="fas fa-sticky-note"></i>
+      ثبت مورد
+
+    </p>
+    <form id="form"  method="post" class="form-group form-horizontal"
+          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+      <div class="form-group">
+        <p class="font-weight-bold headofinput">
+          <b class="text-primary ">1.</b>
+          مورد شما مربوط به کدام بخش است
+
+          ؟ </p>
+        <select class="form-control" name="section" id="section">
+          <option value="null">
+            --
+          </option>
+          <option value="modiriat">
+            مدیریت
+          </option>
+          <option value="tamirat">
+            تعمیرات
+          </option>
+          <option value="modirofclass">
+            مدیریت کلاسها
+          </option>
+          <option value="amozesh">
+            آموزش
+          </option>
+          <option value="اساتید">
+            اساتید
+          </option>
+          <option value="clean">
+            نظافت
+          </option>
+          <option value="دبیرخانه">
+            دبیرخانه
+          </option>
+          <option value="azmayeshgah">
+            آزمایشگاه ها
+          </option>
+          <option value="library">
+            کتابخانه
+          </option>
+          <option value="site">
+            سایت
+          </option>
+        </select>
+        <br>
+        <p class="font-weight-bold headofinput">
+          <b class="text-primary ">2.</b>
+          نوع مورد خود را مشخص کنید
+
+          .</p>
+        <select class="form-control" name="type" id="type">
+          <option value="pishnahad">
+            پیشنهاد
+          </option>
+          <option value="enteghad">
+            انتقاد
+          </option>
+          <option value="shekayat">
+            شکایت
+          </option>
+          <option value="darkhast">
+            درخواست
+          </option>
+
+
+        </select>
+        <br>
+        <p class="font-weight-bold headofinput">
+          <b class="text-primary ">3.</b>
+          مورد خود را به چه کسی ارجاع می دهید
+
+          ؟ </p>
+        <div class="form-group">
+          <input class="form-control var5" type="text" name="referenceperson" id="referto" name="referto" placeholder="نام ونام خانوادگی آن فرد "  data-bv-notempty="true"
+                 data-bv-notempty-message=" نام ارجاع گیرنده نمی تواند خالی باشد! "
+
+                 data-bv-stringlength="true"
+                 data-bv-stringlength-min="6"
+                 data-bv-stringlength-max="30"
+                 data-bv-stringlength-message="   نام ارجاع گیرنده باید بیشتز از شش و کمتر از 30 کاراکتر باشد!"
+
+                 data-bv-regexp="true"
+                 data-bv-regexp-regexp="^[a-zA-Z0-9]+$"
+                 data-bv-regexp-message="  نام ارجاع گیرنده فقط می تواند شامل حروف و عدد باشد!   "
+          >
+        </div>
+
+        <br>
+        <p class="font-weight-bold headofinput">
+          <b class="text-primary ">4.</b>
+          موضوع مورد خود را به طور مختصر بنویسید
+
+          .</p>
+        <div class="form-group">
+          <input class="form-control var5" id="topic" type="text" name="topic" placeholder="موضوع" data-bv-notempty="true"
+                 data-bv-notempty-message=" موضوع نمی تواند خالی باشد! "
+
+                 data-bv-stringlength="true"
+                 data-bv-stringlength-min="6"
+                 data-bv-stringlength-max="30"
+                 data-bv-stringlength-message="  موضوع باید بیشتز از شش و کمتر از 30 کاراکتر باشد!"
+          >
+        </div>
+
+        <br>
+
+        <p class="font-weight-bold headofinput">
+          <b class="text-primary ">5.</b>
+          توضیحات راجب مورد خود را شرح بدهید
+          . </p>
+        <div class="form-group">
+        <textarea class="form-control var5" id="description" rows="7" name="description" data-bv-notempty="true"
+                  data-bv-notempty-message="توضیحات نمی تواند خالی باشد! "
+        ></textarea>
+
+        </div>
+        <br>
+
+        <p class="font-weight-bold headofinput">
+          <b class="text-primary ">6.</b>
+          در صورت نیاز فایل مورد نظر خود را پیوست کنید
+          . </p>
+        <input type="file" class="form-control "  id="file" name="file">
+        <br>
+        <input type="submit" class="form-control btn btn-primary" value="ثبت مورد ">
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>
+<br><br><br><br>
+<script>
+  $(document).ready(function() {
+    $('#form').bootstrapValidator();
+  });
+</script>
+</body>
+</html>

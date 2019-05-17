@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en fr" dir="rtl">
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/eight.css" rel="stylesheet">
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/program.js"></script>
+  <script src="js/forEightjson.js"></script>
+  <meta charset="UTF-8">
+  <title>مشاهده موارد ثبت شده توسط شما </title>
+</head>
+<body class="container-fluid ">
+<div  class="row bg-primary text-white navbar fixed-top">
+  <div class="col-sm-2 text-right">
+    <a>
+      سامانه انتقادات و پیشنهاد دانشگاه شهید بهشتی
+    </a>
+  </div>
+
+
+  <div class="col-sm-8 d-flex justify-content-sm-center font-weight-bold ">
+
+
+    <ul class="nav " id="carmand-top-nav">
+      <li class="nav-item"><a href="orginalEmployee.html" class="nav-link">
+        صفحه اصلی
+      </a></li>
+      <li class="nav-item"><a href="profilesetingForEmployee.html" class="nav-link">
+        ویرایش پروفایل
+      </a></li>
+      <li class="nav-item "><a class="nav-link" href="fiveForEmployee.html">
+        ثبت مورد
+      </a></li>
+      <li class="nav-item activenavitem"><a href="egitForEmployee.html" class="text-white nav-link">
+        موارد ثبت شده توسط شما
+      </a></li>
+      <li class=" nav-item "><a href="sixForEmployee.html" class="nav-link">
+        مشاهده موارد
+      </a></li>
+    </ul>
+
+  </div>
+  <div class="col-sm-2 font-weight-bold">
+
+        <span  >
+          نادر نادری
+        </span>
+    <i class="fas fa-user-circle fa-2x"></i>
+  </div>
+
+</div>
+<br><br><br><br><br><br>
+
+<div class="row text-primary font-weight-bold text-right">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-3">
+
+        <span>
+            <i class="fas fa-filter"></i>
+          انتخاب وضعیت
+
+        :</span>
+    <br><br>
+    <form class="">
+      <div class="form-group  ">
+
+        <select class="form-control">
+          <option value="open">
+            باز
+          </option>
+          <option value="close">
+            بسته
+          </option>
+          <option value="inqueue">
+            در حال بررسی
+          </option>
+          <option value="delay">
+            تعویق
+          </option>
+        </select>
+        <br>
+        <span>
+                    <i class="fas fa-filter"></i>
+                    ارجاع شده به
+
+                    :</span>
+        <br>
+        &nbsp; &nbsp;<input type="text" class="form-control " placeholder="نام و نام خانوادگی فرد">
+        <br>
+        <input type="submit" class="btn btn-primary form-control" value="فیلتر">
+      </div>
+    </form>
+    <br>
+
+  </div>
+</div>
+<br><br><br>
+
+
+<div class="row " >
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-10 bg-white " id="eightcase">
+    <br>
+
+    <p class="text-primary font-weight-bold text-right" >
+      <i class="fas fa-clipboard-list"></i>
+      لیست موارد مربوط به شما :</p>
+
+    <!--<div class=" morddisplay">-->
+    <!--<div class="row ">-->
+    <!--<div class="col-sm-9 mdec">-->
+    <!--<br>-->
+    <!--<div class="mdechead font-weight-bold text-right">-->
+    <!--<span class="text-primary">-->
+    <!--موضوع-->
+    <!--: </span>-->
+    <!--<span class="titel">-->
+    <!---->
+    <!--</span>-->
+    <!--</div>-->
+    <!--<br>-->
+    <!--<div class="dec text-right text-secondary">-->
+
+    <!---->
+    <!---->
+
+    <!--</div>-->
+    <!--<br>-->
+    <!--<p class="file-down text-right font-weight-bold">-->
+
+    <!--<input type="submit" class="btn btn-info btn-sm down-you" value="دانلود فایل پیوست">-->
+
+
+
+    <!--<input type="submit" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#other" value="دیدن توضیحات سایرین">-->
+
+
+    <!--</p>-->
+    <!--<p class="text-danger text-right downloadnone-you ">-->
+    <!--<i class="fas fa-exclamation-triangle"></i>-->
+    <!--فایلی برای دانلود وجود ندارد-->
+    <!--! </p>-->
+
+    <!--</div>-->
+
+    <!--<div  class=" font-weight-bold col-sm-3 text-right header-mord">-->
+    <!--<br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--نوع مورد :-->
+    <!--</span>-->
+    <!--<span class="text-danger shekayattext">-->
+
+    <!--شکایت-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<span class="text-success pishnahadtext">-->
+    <!--پیشهاد-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<span class="text-warning enteghdtext">-->
+    <!--انتقاد-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<span class="text-info darkhasttext">-->
+    <!--درخواست-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--مربوط به بخش:-->
+    <!--</span>-->
+    <!--<span>-->
+    <!--تعمیرات-->
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--ارسال کننده-->
+    <!--:</span>-->
+    <!--<span>-->
+    <!--علی علوی-->
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--ارجاع به-->
+    <!--:</span>-->
+    <!--<span>-->
+    <!--نقی نقوی-->
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--وضعیت-->
+    <!--:</span>-->
+    <!--<span class="text-danger open ">-->
+    <!--باز-->
+    <!--</span>-->
+    <!--<span class="text-success close">-->
+    <!--بسته-->
+    <!--</span>-->
+    <!--<span class="text-info inqueue">-->
+    <!--در حال بررسی-->
+    <!--</span>-->
+    <!--<span class="text-warning postponed">-->
+    <!--تعویق-->
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--تاریخ ثبت-->
+    <!--:</span>-->
+    <!--<span >-->
+
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--تاریخ بسته شدن-->
+    <!--:</span>-->
+    <!--<span >-->
+    <!---->
+    <!--</span>-->
+    <!--<div class=" morddisplay">-->
+    <!--<div class="row ">-->
+    <!--<div class="col-sm-9 mdec">-->
+    <!--<br>-->
+    <!--<div class="mdechead font-weight-bold text-right">-->
+    <!--<span class="text-primary">-->
+    <!--موضوع-->
+    <!--: </span>-->
+    <!--<span class="title">-->
+    <!--</span>-->
+    <!--</div>-->
+    <!--<br>-->
+    <!--<div class="dec text-right text-secondary tozihat">-->
+
+    <!--</div>-->
+    <!--<br>-->
+    <!--<div class="file-down text-right font-weight-bold">-->
+
+    <!--<input type="submit" class="btn btn-info btn-sm down" value="دانلود فایل پیوست">-->
+
+
+
+    <!--<input type="submit" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#other" value="دیدن توضیحات سایرین">-->
+
+    <!--<p class="text-danger text-right downloadnone">-->
+
+    <!--<i class="fas fa-exclamation-triangle"></i>-->
+    <!--فایلی برای دانلود وجود ندارد-->
+    <!--! </p>-->
+    <!--</div>-->
+
+
+
+
+
+
+    <!--</div>-->
+
+    <!--<div  class=" font-weight-bold col-sm-3 text-right header-mord">-->
+    <!--<br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--نوع مورد :-->
+    <!--</span>-->
+    <!--<span class="text-danger shekayattext">-->
+
+    <!--شکایت-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<span class="text-success pishnahadtext">-->
+    <!--پیشهاد-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<span class="text-warning enteghdtext">-->
+    <!--انتقاد-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<span class="text-info darkhasttext">-->
+    <!--درخواست-->
+    <!--&nbsp;&nbsp;-->
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--مربوط به بخش:-->
+    <!--</span>-->
+    <!--<span class="section">-->
+
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--ارسال کننده-->
+    <!--:</span>-->
+    <!--<span class="sender">-->
+
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--ارجاع به-->
+    <!--:</span>-->
+    <!--<span class="referto">-->
+
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--وضعیت-->
+    <!--:</span>-->
+    <!--<span class="text-danger open ">-->
+    <!--باز-->
+    <!--</span>-->
+    <!--<span class="text-success close">-->
+    <!--بسته-->
+    <!--</span>-->
+    <!--<span class="text-info inqueue">-->
+    <!--در حال بررسی-->
+    <!--</span>-->
+    <!--<span class="text-warning postponed">-->
+    <!--تعویق-->
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--تاریخ ثبت-->
+    <!--:</span>-->
+    <!--<span class="startdate" >-->
+
+    <!--</span>-->
+    <!--<br><br>-->
+    <!--<span class="text-left text-primary">-->
+    <!--تاریخ بسته شدن-->
+    <!--:</span>-->
+    <!--<span class="enddate">-->
+
+    <!--</span>-->
+
+
+
+    <!--<br><br>-->
+
+    <!--<form class="form-group form-inline">-->
+    <!--<button class="form-control btn btn-success btn-lgs rezayat-btn " >-->
+    <!--&nbsp;&nbsp; رضایت&nbsp;&nbsp;-->
+    <!--</button>-->
+    <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+    <!--<button class="form-control btn btn-danger narezayat-btn ">-->
+    <!--عدم رضایت-->
+    <!--</button>-->
+    <!--</form>-->
+    <!--<br>-->
+    <!--<div class="text-right ">-->
+    <!--<b class="text-success sabtrezayat"> رضایت شما ثبت شد-->
+    <!--</b>-->
+    <!--<b class="text-danger sabtnarezayat">-->
+    <!--عدم رضایت شما ثبت شد-->
+    <!--</b>-->
+    <!--</div>-->
+    <!--<br>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+  </div>
+  <div class="col-sm-1">
+  </div>
+</div>
+
+
+
+
+
+<br><br><br>
+
+<!--<div class="modal" id="other">-->
+<!--<div class="modal-dialog modal-dialog-centered modal-lg ">-->
+<!--<div class="modal-content">-->
+<!--<div class="modal-header">-->
+<!--<h5 class="modal-title">-->
+<!--توضیحات سایرین-->
+<!--</h5>-->
+<!--</div>-->
+
+<!--<div class="modal-body">-->
+<!--<div class="row bg-white">-->
+<!--<div class="col-sm">-->
+<!--<div class="boxinmodal text-sm-right ">-->
+<!--<p class="text-primary font-weight-bold">-->
+<!--احمد احمدی-->
+<!--</p>-->
+<!--<p class="text-secondary">-->
+<!--مشکل از قسمت شوفاژخونه است-->
+<!--</p>-->
+
+<!--<br>-->
+
+<!--</div>-->
+<!--<br>-->
+<!--<div class="boxinmodal text-sm-right ">-->
+<!--<p class="text-primary font-weight-bold">-->
+<!--محمد محمدی-->
+<!--</p>-->
+<!--<p class="text-secondary">-->
+<!--لطفا دیگ شوفاژخونه را تعمیر کنید-->
+<!--</p>-->
+<!--<br>-->
+
+<!--</div>-->
+
+<!--<br>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="modal-footer">-->
+<!--<button type="button" class="btn btn-danger" data-dismiss="modal">-->
+<!--بستن-->
+<!--</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
