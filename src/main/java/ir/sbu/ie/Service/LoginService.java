@@ -14,14 +14,14 @@ public class LoginService {
     private UserRepository userRepository;
 
 
-    public boolean userLogin(User user, HttpSession session) {
+    public boolean userLogin(User user) {
         User resultUser;
         resultUser = userRepository.findByEmail(user.getEmail());
         if (resultUser == null) {
             return false;
         } else {
             if (resultUser.getPassword().equals(user.getPassword())) {
-                session.setAttribute("id", user.getId());
+//                session.setAttribute("id", user.getId());
                 return true;
             }
         }
