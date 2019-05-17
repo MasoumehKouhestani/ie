@@ -53,7 +53,9 @@ public class SignUpController {
         user.setPosition(position);
         user.setSection(section);
         signUpService.userSignUp(user);
-
-        return "redirect:/orginal.html";
+        if (position.equals("student")) {
+            return "redirect:/orginal.html";
+        }
+        return "redirect:/waiting.html";
     }
 }
