@@ -2,6 +2,7 @@ package ir.sbu.ie.Controller;
 
 import ir.sbu.ie.Entity.CaseEntity;
 import ir.sbu.ie.Service.CaseService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,7 @@ import javax.ws.rs.FormParam;
 import java.io.File;
 import java.util.Date;
 
-@RestController
+@Controller
 @RequestMapping("/case")
 public class CaseController {
     @Inject
@@ -20,7 +21,7 @@ public class CaseController {
 
     @PostMapping("/caseSend")
     @Consumes("application/x-www-form-urlencoded")
-    public void caseSend (@FormParam("section") String section, @FormParam("type") String type,
+    public String caseSend (@FormParam("section") String section, @FormParam("type") String type,
                           @FormParam("referto") String referto, @FormParam("topic") String topic,
                           @FormParam("description") String description, @FormParam("file") File file){
         CaseEntity newCaseEntity = new CaseEntity();
@@ -33,7 +34,10 @@ public class CaseController {
         Date date = new Date();
         newCaseEntity.setStartdate(date);
 
-        caseService.saveCase(referto, newCaseEntity);
-
+        boolean result = caseService.saveCase(referto, newCaseEntity);
+        if (result){
+            return "redirect:/five.html";
+        }
+        return "redirect:/wrongreferTo.html";
     }
 }

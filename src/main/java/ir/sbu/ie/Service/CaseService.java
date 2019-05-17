@@ -15,12 +15,14 @@ public class CaseService {
     @Inject
     private UserRepository userRepository;
 
-    public void saveCase(String referto, CaseEntity newCaseEntity) {
+    public boolean saveCase(String referto, CaseEntity newCaseEntity) {
         User resultUser;
         resultUser = userRepository.findByName(referto);
         if(resultUser != null) {
             newCaseEntity.setReferTo(referto);
             caseRepository.save(newCaseEntity);
+            return true;
         }
+        return false;
     }
 }
