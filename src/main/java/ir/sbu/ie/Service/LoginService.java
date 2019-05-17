@@ -28,4 +28,12 @@ public class LoginService {
         }
         return false;
     }
+
+    public User getUser(User user){
+        return userRepository.findByEmail(user.getEmail());
+    }
+
+    public String getUserPosition(User user){
+        return user.getPosition();
+    }
 }

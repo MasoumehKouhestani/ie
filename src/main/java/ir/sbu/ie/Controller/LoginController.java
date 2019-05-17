@@ -24,7 +24,7 @@ public class LoginController {
     @PostMapping("/userlogin")
     @Consumes("application/x-www-form-urlencoded")
     @Produces("text/html")
-    public String login(@FormParam("email") String email, @FormParam("password") String password ,HttpSession httpSession){
+    public String login(@FormParam("email") String email, @FormParam("password") String password, HttpSession httpSession) {
         User user = new User();
         user.setPassword(password);
         user.setEmail(email);
@@ -32,9 +32,15 @@ public class LoginController {
 //        HttpSession session = request.getSession();
 
         boolean result = loginService.userLogin(user);
-        if (result){
-            httpSession.setAttribute(email,email);
-            return "redirect:/orginal.html";
+        if (result) {
+            httpSession.setAttribute(email, email);
+            user = loginService.getUser(user);
+            if (user.getPosition().equals("student"))
+                return "redirect:/orginalstudent.html";
+            else if (user.getPosition().equals("employee") || user.getPosition().equals("professor"))
+                return "redirect:/orginalEmployee.html";
+            else if (user.getPosition().equals("manager"))
+                return "redirect:/orginal.html";
         }
         return "redirect:/worgPassOrEmail.html";
     }

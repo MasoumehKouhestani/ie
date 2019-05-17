@@ -14,7 +14,7 @@ public class SignUpService {
     private UserRepository userRepository;
 
     public void userSignUp(User user) {
-        if (user.getPosition() == "student") user.setConfirmed(true);
+        if (user.getPosition().equals("student")) user.setConfirmed(true);
         else user.setConfirmed(false);
         userRepository.save(user);
     }
