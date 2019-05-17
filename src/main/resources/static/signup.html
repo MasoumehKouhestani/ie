@@ -11,7 +11,8 @@
   <script src="js/popper.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
 
 </head>
@@ -24,9 +25,10 @@
   </div>
 
   <div class="col-sm-8 bg-white rounded">
-    <p class="text-center text-primary font-weight-bold" style="padding-top: 1rem;font-size: larger">ثبت نام در سامانه انتقادات و پیشنهادات دانشگاه شهید بهشتی</p>
+    <p class="text-center text-primary font-weight-bold" style="padding-top: 1rem;font-size: larger">ثبت نام در سامانه
+      انتقادات و پیشنهادات دانشگاه شهید بهشتی</p>
     <br>
-    <form id="sign_form"  method="post" action="/signup/usersignup" class="form-group form-horizontal"
+    <form id="sign_form" method="post" action="/signup/usersignup" class="form-group form-horizontal"
           data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
@@ -43,7 +45,7 @@
       <div class="form-group">
         <label for="username"><i class="fas fa-address-card"></i>
           نام کاربری:</label>
-        <input type="text" id="username"  class="form-control "
+        <input type="text" id="username" class="form-control "
                placeholder="نام کاربری خود را وارد کنید" name="username"
                data-bv-notempty="true"
                data-bv-notempty-message=" نام کاربری نمی تواند خالی باشد! "
@@ -52,7 +54,6 @@
                data-bv-stringlength-min="6"
                data-bv-stringlength-max="30"
                data-bv-stringlength-message="   نام کاربری باید بیشتز از شش و کمتر از 30 کاراکتر باشد!"
-
 
 
                data-bv-different="true"
@@ -77,7 +78,7 @@
       <div class="form-group">
         <label for="password"><i class="fas fa-lock"></i>
           رمز عبور:</label>
-        <input type="password" id="password"  class="form-control warning2"
+        <input type="password" id="password" class="form-control warning2"
                placeholder="رمز عبور خود را وارد کنید"
                name="password"
                data-bv-notempty="true"
@@ -155,12 +156,13 @@
         <input id="signup_btn" type="submit" class="form-control btn submit-btn" value="ثبت نام"/>
       </div>
     </form>
-    <p class="text-right text-secondary font-weight-bold"><a href="login.html" class="text-secondary" >آیا قبلا عضو شدید ؟ کلیک کنید!</a></p>
+    <p class="text-right text-secondary font-weight-bold"><a href="login.html" class="text-secondary">آیا قبلا عضو شدید
+      ؟ کلیک کنید!</a></p>
   </div>
 </div>
 <br><br><br>
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('#sign_form').bootstrapValidator();
   });
 </script>

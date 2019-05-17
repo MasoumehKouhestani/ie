@@ -5,20 +5,14 @@
   <title>ورود</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
- <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrapValidator.css"/>
   <link href="css/login.css" rel="stylesheet">
   <script src="js/popper.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-
-
-
-
-
-
-
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
 </head>
 <body class="container-fluid text-right">
@@ -32,14 +26,14 @@
     <p class="text-primary font-weight-bold text-center" style="padding-top: 1rem">ورود به سامانه انتقادات و پیشنهادات
       دانشگاه شهید بهشتی </p>
     <br>
-    <form id="login_form" method="get" action="/login/login" class="form-group form-horizontal"
+    <form id="login_form" method="post" action="/login/userlogin" class="form-group form-horizontal"
           data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
->
-        <label class="text-right">
-          <i class="fas fa-address-card text-right"></i>
-          پست الکترونیکی:</label>
+    >
+      <label class="text-right">
+        <i class="fas fa-address-card text-right"></i>
+        پست الکترونیکی:</label>
       <div class="form-group">
         <input type="email" id="email" name="email" class="form-control"
                placeholder="پست الکترونیکی خود را وارد کنید"
@@ -49,9 +43,9 @@
                data-bv-emailaddress="true"
                data-bv-emailaddress-message="این ایمیل درست نمی باشد! "/>
       </div>
-        <br>
+      <br>
 
-<div class="form-group">
+      <div class="form-group">
         <label class="text-right">
           <i class="fas fa-lock text-right"></i>
           رمز عبور:</label>
@@ -64,11 +58,12 @@
                data-bv-stringlength-min="8"
                data-bv-stringlength-message="رمز باید حداقل هشت کاراکتر باشد !"
 
-            />
-</div>
+        />
+      </div>
 
-<br>
-        <input id="login_btn" type="submit" name="submit" class="form-control btn btn-primary font-weight-bold" value="ورود"/>
+      <br>
+      <input id="login_btn" type="submit" name="submit" class="form-control btn btn-primary font-weight-bold submit-btn"
+             value="ورود"/>
 
     </form>
     <p class="text-right font-weight-bold">
@@ -79,7 +74,7 @@
   </div>
 </div>
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('#login_form').bootstrapValidator();
   });
 </script>
