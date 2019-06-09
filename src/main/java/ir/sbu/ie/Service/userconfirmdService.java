@@ -15,14 +15,30 @@ public class userconfirmdService {
     private UserRepository userRepository;
     ;
 
-    public List unconfirmd() {
+    public Object[] unconfirmdlist() {
 
         List<User> findforconfiremd = userRepository.findforconfiremd();
-        for(User s :findforconfiremd){
-            System.out.println(s.getEmail());
-        }
 
-        return findforconfiremd;
+        return findforconfiremd.toArray();
     }
 
+    public String confrimed(String email) {
+
+        User user=userRepository.findByEmail(email);
+        if(user !=null){
+            user.setConfirmed(true);
+            userRepository.save(user);
+
+            return "true";
+        }
+        return "false";}
+
+    public String unconfirmd(String email) {
+        User user=userRepository.findByEmail(email);
+        if(user !=null){
+            user.setConfirmed(false);
+           userRepository.delete(user);
+        return "true";
+    }
+    return "false";}
 }

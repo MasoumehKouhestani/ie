@@ -11,10 +11,12 @@ public interface UserRepository  extends JpaRepository<User,Integer> {
     public List<User> findforconfiremd() ;
 
 
+
     public User findByEmail(String email);
 
     public User findByName(String name);
 
     public User findByUsername(String username);
+
 
 }
