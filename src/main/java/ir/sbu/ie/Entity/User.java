@@ -1,31 +1,71 @@
 package ir.sbu.ie.Entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
+
 
 @Entity
 @Table(name = "user")
 public class User {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
-    @Column(name = "email")
-    String email;
-    @Column(name = "name")
-    String name;
-    @Column(name = "username")
-    String username;
-    @Column(name = "password")
-    String password;
-    @Column(name = "confirmed")
-    boolean confirmed;
 
-    public boolean isConfirmed() {
-        return confirmed;
+    public int getId() {
+        return id;
     }
 
-    public void setConfirmed(boolean confirmed) {
-        this.confirmed = confirmed;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Basic
+    @NotNull
+    @Pattern(regexp = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$")
+    @Column(name = "email")
+    private String email;
+    @Basic
+    @NotNull
+    @Column(name = "name")
+    private String name;
+
+    @Basic
+    @NotNull
+    @Size(min = 6, max = 30)
+    @Column(name = "username")
+    private String username;
+    @Basic
+    @NotNull
+    @Column(name = "password")
+    @Size(min = 8, max = 16)
+    private String password;
+    @Basic
+    @Column(name = "confirmed")
+    private boolean confirmed;
+    @Basic
+    @Column(name = "position")
+    private String position;
+    @Basic
+    @Column(name = "section")
+    private String section;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
@@ -44,33 +84,12 @@ public class User {
         this.password = password;
     }
 
-    @Column(name = "position")
-    String position;
-    @Column(name = "section")
-    String section;
-
-    public int getId() {
-        return id;
+    public boolean isConfirmed() {
+        return confirmed;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
     }
 
     public String getPosition() {
@@ -89,3 +108,4 @@ public class User {
         this.section = section;
     }
 }
+

@@ -30,16 +30,15 @@ import java.io.InputStream;
 import java.net.URI;
 
 @Controller
-@RequestMapping("/signup")
 public class SignUpController {
     @Inject
     public SignUpService signUpService;
 
-    @PostMapping("/usersignup")
+    @PostMapping("/signup")
     @Consumes("application/x-www-form-urlencoded")
     @Produces("text/html")
     public String signup(@FormParam("name") String name, @FormParam("username") String username, @FormParam("email") String email
-            , @FormParam("password") String password, @FormParam("position") String position, @FormParam("section") String section) throws ServletException, IOException {
+            , @FormParam("password") String password, @FormParam("position") String position, @FormParam("section") String section, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
         user.setName(name);
         user.setUsername(username);
@@ -47,10 +46,15 @@ public class SignUpController {
         user.setEmail(email);
         user.setPosition(position);
         user.setSection(section);
-        signUpService.userSignUp(user);
-        if (position.equals("student")) {
-            return "redirect:/orginalstudent.html";
-        }
-        return "redirect:/waiting.html";
+        boolean valid = signUpService.userSignUp(user);
+        if (valid == true) {
+            if (position.equals("student")) {
+                request.getSession().setAttribute("email", email);
+                return "redirect:/orginalstudent.html";
+            }
+            return "redirect:/waiting.html";
+        } else
+            return "redirect:/w1.html";
     }
+
 }
