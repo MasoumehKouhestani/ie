@@ -1,7 +1,8 @@
 package ir.sbu.ie.Controller;
 
 import ir.sbu.ie.Entity.User;
-import ir.sbu.ie.Service.SignUpService;
+import ir.sbu.ie.Service.profilesetingService;
+import ir.sbu.ie.Service.profilesetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,31 +31,23 @@ import java.io.InputStream;
 import java.net.URI;
 
 @Controller
-public class SignUpController {
+public class profilesetingController {
     @Inject
-    private SignUpService signUpService;
+    private profilesetingService profilesetingService;
 
-    @PostMapping("/signup")
+    @PostMapping("/profileseting")
     @Consumes("application/x-www-form-urlencoded")
     @Produces("text/html")
     public String signup(@FormParam("name") String name, @FormParam("username") String username, @FormParam("email") String email
-            , @FormParam("password") String password, @FormParam("position") String position, @FormParam("section") String section, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = new User();
-        user.setName(name);
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setPosition(position);
-        user.setSection(section);
-        boolean valid = signUpService.userSignUp(user);
+            , @FormParam("password") String password, @FormParam("newpassword") String newpassword, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String session= (String) request.getSession().getAttribute("email");
+        boolean valid = profilesetingService.profileset(session,name,username,email,password,newpassword);
         if (valid == true) {
-            if (position.equals("student")) {
-                request.getSession().setAttribute("email", email);
-                return "redirect:/orginalstudent.html";
-            }
-            return "redirect:/waiting.html";
+                  request.getSession().setAttribute("email",email);
+                return "redirect:/w2.html";
+
         } else
-            return "redirect:/w1.html";
+            return "redirect:/w3.html";
     }
 
 }
