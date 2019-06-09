@@ -6,15 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
+
 
 @Service
 public class LoginService {
 
     @Inject
     private UserRepository userRepository;
-    @Autowired
-    private HttpSession httpSession;
+
 
     public boolean userLogin(User user) {
         User resultUser;

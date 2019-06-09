@@ -26,7 +26,10 @@
     <p class="text-primary font-weight-bold text-center" style="padding-top: 1rem">ورود به سامانه انتقادات و پیشنهادات
       دانشگاه شهید بهشتی </p>
     <br>
-    <form id="login_form" method="post" action="/login/userlogin" class="form-group form-horizontal">
+    <form id="login_form" method="post" action="/login" class="form-group form-horizontal"
+          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
       <label class="text-right">
         <i class="fas fa-address-card text-right"></i>
         پست الکترونیکی:</label>
@@ -58,8 +61,9 @@
       </div>
 
 <br>
+      <div class="form-group">
         <input id="login_btn" type="submit" name="submit" class=" form-control btn btn-primary font-weight-bold submit-btn" value="ورود"/>
-
+      </div>
     </form>
     <p class="text-right font-weight-bold">
       <a class="text-right text-secondary" href="signup.html"> در سامانه عضو نیستید؟ کلیک کنید !</a>
