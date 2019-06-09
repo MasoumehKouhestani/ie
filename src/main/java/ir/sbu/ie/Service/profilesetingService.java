@@ -13,18 +13,6 @@ public class profilesetingService {
     @Inject
     private UserRepository userRepository;
 
-    public boolean userSignUp(User user) {
-        User u1 =userRepository.findByEmail(user.getEmail());
-        User u2=userRepository.findByUsername(user.getUsername());
-        if(u1 == null && u2==null){
-            if (user.getPosition().equals("student")) user.setConfirmed(true);
-            else user.setConfirmed(false);
-            userRepository.save(user);
-            return true;
-        }
-        else return false;
-    }
-
     public boolean profileset(String session, String name, String username, String email, String password, String newpassword) {
         User user =userRepository.findByEmail(session);
         User u2 =userRepository.findByEmail(email);
