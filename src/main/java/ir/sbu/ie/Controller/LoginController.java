@@ -34,6 +34,7 @@ public class LoginController {
         if (result) {
             request.getSession().setAttribute("email",email);
             user = loginService.getUser(user);
+            request.getSession().setAttribute("positon",user.getPosition());
             if (user.getPosition().equals("student"))
                 return "redirect:/orginalstudent.html";
             else if (user.getPosition().equals("employee") || user.getPosition().equals("professor"))

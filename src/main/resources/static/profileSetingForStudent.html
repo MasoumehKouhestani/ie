@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>ویرایش پروفایل</title>
+  <
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrapValidator.css"/>
   <link href="css/profileSetting.css" rel="stylesheet">
   <script src="js/popper.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/validateFields.js"></script>
-  <script src="js/main.js"></script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
 </head>
 <body>
@@ -29,7 +31,7 @@
       <li class="nav-item"><a href="orginalstudent.html" class="nav-link">
         صفحه اصلی
       </a></li>
-      <li class="nav-item activenavitem"><a href="profileSetingForStudent.html" class="nav-link">
+      <li class="nav-item activenavitem rounded"><a href="profileSetingForStudent.html" class="text-white nav-link">
         ویرایش پروفایل
       </a></li>
       <li class="nav-item"><a href="fiveForStudent.html" class="nav-link">
@@ -47,93 +49,116 @@
         <span>
             زهرا محمدی
         </span>
-    <i class="fas fa-user-circle fa-2x"></i>
+    <i class="fas fa-user-circle fa-2x text-white"></i>
   </div>
 
 </div>
 <br><br><br><br><br><br>
 
 
-<!--Edit Profile-->
+
 <div class="row">
   <div class="col-sm-2">
   </div>
 
-  <div class="col-sm-8 shadow-lg bg-white">
+  <div class="col-sm-8 shadow-lg bg-white rounded">
     <br>
-    <form name="profile_edit_form" onsubmit="return validate_profile_edit()" method="post" class="form-group">
+    <form name="profile_edit_form" id="profile_edit_form" method="post" action="/profileseting" class="form-group form-horizontal text-right"
+          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
       <div class="form-group">
-        <label for="name_edit_profile"><i class="fas fa-user-circle"></i>
-          نام و نام خانوادگی:
-        </label>
-        <input type="text" id="name_edit_profile" name="name_edit_profile" class="form-control warning3"
-               placeholder="نام و نام خانوادگی خود را وارد کنید"/>
-        <div class="warning">
-          <p class="wrong_edit_profile_name">نام و نام خانوادگی وارد شده معتبر نیست!</p>
-          <img class="wrong_edit_profile_name" src="img/alarm.png">
-        </div>
+        <label for="name"><i class="fas fa-user-alt"></i>
+          نام و نام خانوادگی جدید:</label>
+        <input type="text" id="name" name="name" class="form-control"
+               placeholder="نام و نام خانوادگی خود را وارد کنید"
+               data-bv-notempty="true"
+               data-bv-notempty-message="نام و نام خانودگی نمی تواند خالی باشد!"/>
+
         <br>
       </div>
       <div class="form-group">
-        <label for="username_edit_profile"><i class="fas fa-address-card"></i>
-          نام کاربری:</label>
-        <input type="text" id="username_edit_profile" name="username_edit_profile" class="form-control warning3"
-               placeholder="نام کاربری خود را وارد کنید"/>
-        <div class="warning">
-          <p class="wrong_edit_profile_username">نام کاربری وارد شده معتبر نیست!</p>
-          <img class="wrong_edit_profile_username" src="img/alarm.png">
-        </div>
+        <label for="username"><i class="fas fa-address-card"></i>
+          نام کاربری جدید:</label>
+        <input type="text" id="username" class="form-control "
+               placeholder="نام کاربری خود را وارد کنید" name="username"
+               data-bv-notempty="true"
+               data-bv-notempty-message=" نام کاربری نمی تواند خالی باشد! "
+
+               data-bv-stringlength="true"
+               data-bv-stringlength-min="6"
+               data-bv-stringlength-max="30"
+               data-bv-stringlength-message="   نام کاربری باید بیشتز از شش و کمتر از 30 کاراکتر باشد!"
+
+
+               data-bv-different="true"
+               data-bv-different-field="password"
+               data-bv-different-message=" نام کاربری و رمز نمی تواند یکسان باشد!  "/>
+
         <br>
       </div>
       <div class="form-group">
-        <label for="email_edit_profile"><i class="fas fa-envelope"></i>
-          پست الکترونیکی:</label>
-        <input type="email" id="email_edit_profile" name="email_edit_profile" class="form-control warning3"
-               placeholder="پست الکترونیکی خود را وارد کنید"/>
-        <div class="warning">
-          <p class="wrong_edit_profile_email">پست الکترونیکی وارد شده معتبر نیست!</p>
-          <img class="wrong_edit_profile_email" src="img/alarm.png">
-        </div>
+        <label for="email"><i class="fas fa-envelope"></i>
+          پست الکترونیکی جدید:</label>
+        <input type="email" id="email" class="form-control " placeholder="پست الکترونیکی خود را وارد کنید"
+               name="email"
+               data-bv-notempty="true"
+               data-bv-notempty-message=" ایمیل نمی تواند خالی باشد! "
+
+               data-bv-emailaddress="true"
+               data-bv-emailaddress-message=" ادرس ایمیل معتبر نیست! "/>
+
         <br>
       </div>
       <div class="form-group">
-        <label for="present_password_edit_profile"><i class="fas fa-lock"></i>
+        <label for="password"><i class="fas fa-lock"></i>
           رمز عبور فعلی:</label>
-        <input type="password" id="present_password_edit_profile" name="present_password_edit_profile"
-               class="form-control warning3"
-               placeholder="رمز عبور فعلی خود را وارد کنید"/>
-        <div class="warning">
-          <p class="wrong_edit_profile_present_pass">رمز عبور فعلی وارد شده صحیح نیست!</p>
-          <img class="wrong_edit_profile_present_pass" src="img/alarm.png">
-        </div>
+        <input type="password" id="password" class="form-control warning2"
+               placeholder="رمز عبور فعلی خود را وارد کنید"
+               name="password"
+               data-bv-notempty="true"
+               data-bv-notempty-message=" رمز نمی تواند خالی باشد! "
+
+               data-bv-stringlength="true"
+               data-bv-stringlength-min="8"
+               data-bv-stringlength-message=" رمز باید حداقل هشت کاراکتر باشد! "
+
+               data-bv-different="true"
+               data-bv-different-field="username"
+               data-bv-different-message=" نام کاربری و رمز نمی تواند یکسان باشد! "
+        />
       </div>
       <div class="form-group">
-        <label for="new_password_edit_profile"><i class="fas fa-lock"></i>
+        <label for="newpassword"><i class="fas fa-lock"></i>
           رمز عبور جدید:</label>
-        <input type="password" id="new_password_edit_profile" name="new_password_edit_profile" class="form-control warning3"
-               placeholder="رمز عبور جدید خود را وارد کنید"/>
-        <div class="warning">
-          <p class="wrong_edit_profile_new_pass">رمز عبور جدید وارد شده معتبر نیست!</p>
-          <img class="wrong_edit_profile_new_pass" src="img/alarm.png">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="repeat_password_edit_profile"><i class="fas fa-lock"></i>
-          تکرار رمز عبور جدید:</label>
-        <input type="password" id="repeat_password_edit_profile" name="repeat_password_edit_profile"
-               class="form-control warning3"
-               placeholder="رمز عبور جدید خود را تکرار کنید"/>
-        <div class="warning">
-          <p class="wrong_edit_profile_repeat_pass">تکرار رمز عبور صحیح نیست!</p>
-          <img class="wrong_edit_profile_repeat_pass" src="img/alarm.png">
-        </div>
+        <input type="password" id="newpassword" name="newpassword"class="form-control warning2"
+               placeholder="رمز عبور جدید خود را وارد کنید"
+               name="password"
+               data-bv-notempty="true"
+               data-bv-notempty-message=" رمز نمی تواند خالی باشد! "
+
+               data-bv-stringlength="true"
+               data-bv-stringlength-min="8"
+               data-bv-stringlength-message=" رمز باید حداقل هشت کاراکتر باشد! "
+               data-bv-different="true"
+               data-bv-different-field="username"
+               data-bv-different-message=" نام کاربری و رمز نمی تواند یکسان باشد! "
+
+        />
       </div>
       <div id="edit_profile_btn_div" class="form-group">
         <input id="edit_profile_btn" type="submit" class="form-control btn submit-btn font-weight-bold warning3" value="اعمال تغییرات"/>
       </div>
+
     </form>
   </div>
 </div>
+
 <br><br><br>
 </body>
+<script>
+  $(document).ready(function () {
+    $('#profile_edit_form').bootstrapValidator();
+  });
+</script>
 </html>
