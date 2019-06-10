@@ -22,9 +22,9 @@ public class userconfirmdService {
         return findforconfiremd.toArray();
     }
 
-    public String confrimed(String email) {
+    public String confrimed(String username) {
 
-        User user=userRepository.findByEmail(email);
+        User user=userRepository.findByUsername(username);
         if(user !=null){
             user.setConfirmed(true);
             userRepository.save(user);
@@ -33,8 +33,8 @@ public class userconfirmdService {
         }
         return "false";}
 
-    public String unconfirmd(String email) {
-        User user=userRepository.findByEmail(email);
+    public String unconfirmd(String Username) {
+        User user=userRepository.findByUsername(Username);
         if(user !=null){
             user.setConfirmed(false);
            userRepository.delete(user);

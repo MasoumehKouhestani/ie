@@ -22,10 +22,10 @@ $(document).ready(function(){
         '        <br>\n' +
 
         '          <button  class="btn btn-success b1 b" value="' +
-        x.email +
+        x.username +
         '">تایید</button>\n' +
         '          <button  class="btn btn-danger b2 b" value="' +
-        x.email+
+        x.username+
         '">رد</button>\n'+
         '   <p class="text-right text-success t">تایید شد! </p>\n' +
         '          <p class="text-right text-danger r"> رد شد!</p></div>');
@@ -33,27 +33,23 @@ $(document).ready(function(){
       $('.person_info_container').append(s);
 
       $('.b1').click(function() {
+        $.post("/confrimed",$(this).val() ,function(d){});
 
-        $.post("/confrimed",$(this).val().toString() ,function(data){
-          if(data==true){
           $(this).next().next().next().hide();
           $(this).next().next().show();
 
           $(this).next().next().hide(4000);
-        }}
-     );
+
+
       });
       $('.b2').click(function() {
-        alert($(this).val())
-        $.post("/unconfrimed",$(this).val().toString() ,function(data){
+        $.post("/unconfrimed",$(this).val() ,function(d){});
 
-          if(data==true) {
             $(this).next().hide();
             $(this).next().next().show();
 
-            $(this).next().next().hide(4000);
-         }
-       });
+
+
       });
       $('.b').click(function(e){
         e.preventDefault();

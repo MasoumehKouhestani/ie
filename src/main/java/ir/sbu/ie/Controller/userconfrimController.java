@@ -43,14 +43,17 @@ public class userconfrimController {
     @PostMapping("/confrimed")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces (MediaType.TEXT_PLAIN)
-    public String confrimed( String email, HttpServletRequest request, HttpServletResponse response){
-        return  userconfirmdService.confrimed(email);
+    public String confrimed( @RequestBody String username, HttpServletRequest request, HttpServletResponse response){
+        username=username.substring(0,username.length()-1);
+        System.out.println(username);
+        return userconfirmdService.confrimed(username);
     }
     @PostMapping("/unconfrimed")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces (MediaType.TEXT_PLAIN)
-    public String unconfrimed(String email,HttpServletRequest request, HttpServletResponse response){
-        return userconfirmdService.unconfirmd(email);
+    public String unconfrimed(@RequestBody String username,HttpServletRequest request, HttpServletResponse response){
+        username=username.substring(0,username.length()-1);
+        return userconfirmdService.unconfirmd(username);
     }
 
 }
