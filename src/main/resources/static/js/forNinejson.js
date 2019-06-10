@@ -28,12 +28,14 @@ $(document).ready(function(){
         '">' +
         'تایید' +
         '</button>\n' +
+        '   <p class="text-right text-success t" style="display: none">انجام شد </p>\n' +
           '      <button type="button" class="btn btn-secondary b2" value="' +
         x.username+
         '"' +
         '>' +
         'غیرفعال' +
         '</button>\n' +
+        '   <p class="text-right text-success t style="display: none"">انجام شد </p>\n' +
           '      <input type="button" value="ویرایش پروفایل" class="btn btn-info" data-toggle="modal" data-target="#' +
           m +
           '">\n' +
@@ -43,7 +45,7 @@ $(document).ready(function(){
         '>' +
         'حذف' +
         '</button>\n' +
-        '   <p class="text-right text-success t">انجام شد </p>\n' +
+        '   <p class="text-right text-success t" style="display: none">انجام شد </p>\n' +
 
           '      </div>\n' +
           '    </div>\n' +
@@ -54,26 +56,27 @@ $(document).ready(function(){
       $('.person_info_container').append(s);
       $('.b3').click(function() {
         $.post("/confrimed",$(this).val() ,function(d){});
-        $('.t').show()
+        $(this).next().show()
 
-        $('.t').hide(4000);
+        $(this).next().hide(4000);
 
       });
       $('.b2').click(function() {
         $.post("/deactive",$(this).val() ,function(d){});
+        $(this).next().show()
 
-        $('.t').show()
+        $(this).next().hide(4000);
 
-        $('.t').hide(4000);
 
 
       });
       $('.b1').click(function() {
         $.post("/unconfrimed",$(this).val() ,function(d){});
 
-        $('.t').show()
+        $(this).next().show()
 
-        $('.t').hide(4000);
+        $(this).next().hide(4000);
+
 
 
       });
@@ -138,7 +141,7 @@ $(document).ready(function(){
           '                  <br>\n' +
           '                </div>\n' +
           '                <div class="form-group">\n' +
-          '                  <label for="new_password_edit_profile">رمز عبور جدید:</label>\n' +
+          '                  <label >رمز عبور جدید:</label>\n' +
           '                  <input type="password" id="password" name="password" class="form-control"\n' +
         '               data-bv-notempty="true"\n' +
         '               data-bv-notempty-message=" رمز نمی تواند خالی باشد! "\n' +

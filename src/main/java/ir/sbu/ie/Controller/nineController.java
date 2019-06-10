@@ -52,8 +52,8 @@ public class nineController {
 
     @PostMapping("/managerprofileset")
     @Consumes("application/x-www-form-urlencoded")
-    public void signup(@FormParam("old") String old, @FormParam("name") String name, @FormParam("username") String username, @FormParam("email") String email, @FormParam("newpassword") String newpassword, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean valid = nineService.profileset(old, name, username, email, newpassword);
+    public void signup(@FormParam("old") String old, @FormParam("name") String name, @FormParam("username") String username, @FormParam("email") String email, @FormParam("password") String password, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean valid = nineService.profileset(old, name, username, email, password);
         if (valid == true) {
 
             response.sendRedirect("w2.html");

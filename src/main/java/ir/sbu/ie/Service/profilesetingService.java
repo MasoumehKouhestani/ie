@@ -17,7 +17,7 @@ public class profilesetingService {
         User user =userRepository.findByEmail(session);
         User u2 =userRepository.findByEmail(email);
         User u3=userRepository.findByUsername(username);
-        if(u2 == null && u3==null && user.getPosition()!=password){
+        if(u2 == null && u3==null && user.getPassword().equals(password)){
            user.setPassword(newpassword);
            user.setEmail(email);
            user.setUsername(username);
