@@ -22,10 +22,10 @@ $(document).ready(function(){
         '        <br>\n' +
 
         '          <button  class="btn btn-success b1 b" value="' +
-        i +
+        x.email +
         '">تایید</button>\n' +
         '          <button  class="btn btn-danger b2 b" value="' +
-        i+
+        x.email+
         '">رد</button>\n'+
         '   <p class="text-right text-success t">تایید شد! </p>\n' +
         '          <p class="text-right text-danger r"> رد شد!</p></div>');
