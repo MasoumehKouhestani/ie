@@ -28,14 +28,14 @@ $(document).ready(function(){
         '">' +
         'تایید' +
         '</button>\n' +
-        '   <p class="text-right text-success t" style="display: none">انجام شد </p>\n' +
+        '   <p class="text-right text-success " style="display: none">تایید شد </p>\n' +
           '      <button type="button" class="btn btn-secondary b2" value="' +
         x.username+
         '"' +
         '>' +
         'غیرفعال' +
         '</button>\n' +
-        '   <p class="text-right text-success t style="display: none"">انجام شد </p>\n' +
+        '   <p class="text-right text-secondary " style="display: none">غیرفعال شد  </p>\n' +
           '      <input type="button" value="ویرایش پروفایل" class="btn btn-info" data-toggle="modal" data-target="#' +
           m +
           '">\n' +
@@ -45,7 +45,7 @@ $(document).ready(function(){
         '>' +
         'حذف' +
         '</button>\n' +
-        '   <p class="text-right text-success t" style="display: none">انجام شد </p>\n' +
+        '   <p class="text-right text-danger " style="display: none">حذف شد</p>\n' +
 
           '      </div>\n' +
           '    </div>\n' +
