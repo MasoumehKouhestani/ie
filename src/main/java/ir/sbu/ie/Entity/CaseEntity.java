@@ -1,6 +1,8 @@
 package ir.sbu.ie.Entity;
 //
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,26 +12,46 @@ import java.util.HashMap;
 public class CaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Basic
+    @NotNull
     int id;
     @Column(name = "topic")
+    @Basic
+    @NotNull
     String topic;
     @Column(name = "description")
+    @Basic
+    @NotNull
     String description;
     @Column(name = "type")
+    @Basic
+    @NotNull
     String type;
     @Column(name = "section")
+    @Basic
     String section;
     @Column(name = "sender")
-    String sender;
+
+    @NotNull
+
+
+
+    User sender;
     @Column(name = "referTo")
-    String referTo;
+
+    @NotNull
+    User referTo;
     @Column(name = "condition")
+    @Basic
+    @NotNull
     String condition;
     @Column(name = "startdate")
+    @NotNull
     Date startdate;
     @Column(name = "enddate")
     Date enddate;
     @Column(name = "file")
+    @Lob
     File file;
 
     public int getId() {
@@ -72,19 +94,19 @@ public class CaseEntity {
         this.section = section;
     }
 
-    public String getSender() {
+    public User getSender() {
         return sender;
     }
 
-    public void setSender(String sender) {
+    public void setSender(User sender) {
         this.sender = sender;
     }
 
-    public String getReferTo() {
+    public User getReferTo() {
         return referTo;
     }
 
-    public void setReferTo(String referTo) {
+    public void setReferTo(User referTo) {
         this.referTo = referTo;
     }
 

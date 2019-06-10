@@ -5,14 +5,32 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
 @Table(name = "user")
 public class User {
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_case",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "case_id", referencedColumnName = "ID")
+    )
+    private List<CaseEntity> cases;
+
+    public List<CaseEntity> getCases() {
+        return cases;
+    }
+
+    public void setCases(List<CaseEntity> cases) {
+        this.cases = cases;
+    }
 
     public int getId() {
         return id;
