@@ -14,14 +14,15 @@ public class SignUpService {
     private UserRepository userRepository;
 
     public boolean userSignUp(User user) {
-        User u1 = userRepository.findByEmail(user.getEmail());
-        User u2 = userRepository.findByUsername(user.getUsername());
-        if (u1 == null && u2 == null) {
-            if (user.getPosition().equals("student")) user.setConfirmed(true);
-            else user.setConfirmed(false);
-            userRepository.save(user);
-            return true;
-        } else return false;
+        User u1 =userRepository.findByEmail(user.getEmail());
+        User u2=userRepository.findByUsername(user.getUsername());
+        if(u1 == null && u2==null){
+        if (user.getPosition().equals("student")) user.setConfirmed(true);
+        else user.setConfirmed(false);
+        userRepository.save(user);
+        return true;
+    }
+        else return false;
     }
 
 }
