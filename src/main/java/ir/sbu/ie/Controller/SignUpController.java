@@ -37,6 +37,10 @@ public class SignUpController {
                 request.getSession().setAttribute("email", email);
                 return "redirect:/orginalstudent.html";
             }
+            if (position.equals("manager")) {
+                request.getSession().setAttribute("email", email);
+                return "redirect:/orginal.html";
+            }
             return "redirect:/waiting.html";
         } else
             return "redirect:/w1.html";
