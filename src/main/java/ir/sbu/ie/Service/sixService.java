@@ -1,9 +1,7 @@
 package ir.sbu.ie.Service;
 
 import ir.sbu.ie.Entity.CaseEntity;
-import ir.sbu.ie.Entity.User;
 import ir.sbu.ie.Repository.CaseRepository;
-import ir.sbu.ie.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -11,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public class sixService{
+public class sixService {
 
     @Inject
     private CaseRepository caseRepository;
@@ -19,7 +17,7 @@ public class sixService{
 
     public Object[] caseList() {
 
-        List<CaseEntity> find= caseRepository.findquery();
+        List<CaseEntity> find = caseRepository.findquery();
 
         return find.toArray();
     }
