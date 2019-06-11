@@ -20,8 +20,8 @@ public class CaseService {
         User refertouser= userRepository.findByName(referto);
         User sender = userRepository.findByEmail(senderEmail);
         if (refertouser != null && sender != null && !refertouser.getPosition().equals("student")) {
-            newCaseEntity.setSender(sender);
-            newCaseEntity.setReferTo(refertouser);
+            newCaseEntity.setSenderuser(sender);
+            newCaseEntity.setReferTOuser(refertouser);
 
 
             List<CaseEntity> reccases=refertouser.getReccases();
@@ -32,7 +32,7 @@ public class CaseService {
             sendcase.add(newCaseEntity);
             sender.setSendcases(sendcase);
             userRepository.save(sender);
-            
+
 
             return true;
         }

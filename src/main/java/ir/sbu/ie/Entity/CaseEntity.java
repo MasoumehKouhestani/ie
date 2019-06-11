@@ -19,7 +19,7 @@ public class CaseEntity {
     @Basic
     @NotNull
     String topic;
-    @Column(name = "description")
+    @Column(name ="description")
     @Basic
     @NotNull
     String description;
@@ -31,18 +31,28 @@ public class CaseEntity {
     @Basic
     String section;
 
+    @Column(name = "ismanager")
+    @Basic
+    boolean ismanager=false;
 
-    @NotNull
+    public boolean isIsmanager() {
+        return ismanager;
+    }
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    public void setIsmanager(boolean ismanager) {
+        this.ismanager = ismanager;
+    }
+
+
+
+    @ManyToOne
     @JoinColumn(name = "SENDER_ID")
 
-    User sender;
+    User senderuser;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "REFERTO_ID")
-    @NotNull
-    User referTo;
+    User referTOuser;
     @Column(name = "condition")
     @Basic
     @NotNull
@@ -96,20 +106,22 @@ public class CaseEntity {
         this.section = section;
     }
 
-    public User getSender() {
-        return sender;
+    public User getSenderuser() {
+        return senderuser;
     }
 
-    public void setSender(User sender) {
-        this.sender = sender;
+    public void setSenderuser(User senderuser) {
+        this.senderuser = senderuser;
     }
 
-    public User getReferTo() {
-        return referTo;
+    public User getReferTOuser() {
+        return referTOuser;
     }
 
-    public void setReferTo(User referTo) {
-        this.referTo = referTo;
+    public void setReferTOuser(User referTOuser) {
+        this.referTOuser = referTOuser;
+        if(referTOuser.getPosition().equals("manager"))
+            this.setIsmanager(true);
     }
 
     public String getCondition() {
