@@ -16,27 +16,27 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
-    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "senderuser")
-    private List<CaseEntity> sendcases;
+//    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "senderuser")
+//    private List<CaseEntity> sendcases;
+//
+//    public List<CaseEntity> getSendcases() {
+//        return sendcases;
+//    }
+//
+//    public void setSendcases(List<CaseEntity> sendcases) {
+//        this.sendcases = sendcases;
+//    }
+//
+//    public List<CaseEntity> getReccases() {
+//        return reccases;
+//    }
+//
+//    public void setReccases(List<CaseEntity> reccases) {
+//        this.reccases = reccases;
+//    }
 
-    public List<CaseEntity> getSendcases() {
-        return sendcases;
-    }
-
-    public void setSendcases(List<CaseEntity> sendcases) {
-        this.sendcases = sendcases;
-    }
-
-    public List<CaseEntity> getReccases() {
-        return reccases;
-    }
-
-    public void setReccases(List<CaseEntity> reccases) {
-        this.reccases = reccases;
-    }
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "referTOuser")
-    private List<CaseEntity> reccases;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "referTOuser")
+//    private List<CaseEntity> reccases;
 
 
     public int getId() {
