@@ -4,8 +4,6 @@ import ir.sbu.ie.Entity.CaseEntity;
 import ir.sbu.ie.Service.CaseService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -24,10 +22,10 @@ public class CaseController {
 
     @PostMapping("/caseSend")
     @Consumes("application/x-www-form-urlencoded")
-    public String caseSend (@FormParam("section") String section, @FormParam("type") String type,
-                            @FormParam("referto") String referto, @FormParam("topic") String topic,
-                            @FormParam("description") String description, @FormParam("file") File file, HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-        String senderemail= (String) request.getSession().getAttribute("email");
+    public String caseSend(@FormParam("section") String section, @FormParam("type") String type,
+                           @FormParam("referto") String referto, @FormParam("topic") String topic,
+                           @FormParam("description") String description, @FormParam("file") File file, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String senderemail = (String) request.getSession().getAttribute("email");
         CaseEntity newCaseEntity = new CaseEntity();
         newCaseEntity.setCondition("open");
         newCaseEntity.setDescription(description);
@@ -38,8 +36,8 @@ public class CaseController {
         Date date = new Date();
         newCaseEntity.setStartdate(date);
 
-        boolean result = caseService.saveCase(referto, newCaseEntity,senderemail);
-        if (result){
+        boolean result = caseService.saveCase(referto, newCaseEntity, senderemail);
+        if (result) {
             return "redirect:/w2.html";
         }
         return "redirect:/worngreferTo.html";

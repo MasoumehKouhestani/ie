@@ -17,18 +17,18 @@ public class CaseService {
     private UserRepository userRepository;
 
     public boolean saveCase(String referto, CaseEntity newCaseEntity, String senderEmail) {
-        User refertouser= userRepository.findByName(referto);
+        User refertouser = userRepository.findByName(referto);
         User sender = userRepository.findByEmail(senderEmail);
         if (refertouser != null && sender != null && !refertouser.getPosition().equals("student")) {
             newCaseEntity.setSenderuser(sender);
             newCaseEntity.setReferTOuser(refertouser);
 
 
-            List<CaseEntity> reccases=refertouser.getReccases();
+            List<CaseEntity> reccases = refertouser.getReccases();
             reccases.add(newCaseEntity);
             refertouser.setReccases(reccases);
             userRepository.save(refertouser);
-            List<CaseEntity> sendcase=sender.getSendcases();
+            List<CaseEntity> sendcase = sender.getSendcases();
             sendcase.add(newCaseEntity);
             sender.setSendcases(sendcase);
             userRepository.save(sender);
