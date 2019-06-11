@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "cases")
@@ -32,15 +33,14 @@ public class CaseEntity {
     @Column(name = "section")
     @Basic
     String section;
-
     @Column(name = "ismanager")
     @Basic
-    boolean ismanager = false;
-    @ManyToOne
+    @OneToMany
+    List<comment> comments;
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "SENDER_ID")
-
     User senderuser;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "REFERTO_ID")
     User referTOuser;
     @Column(name = "condition")
@@ -55,6 +55,40 @@ public class CaseEntity {
     @Column(name = "file")
     @Lob
     File file;
+    boolean ismanager = false;
+    @Basic
+    @Column(name = "sender")
+    String sender;
+    @Basic
+    @Column(name = "referTo")
+    String referTo;
+    @Basic
+    @Column(name = "rezayat")
+    String rezayat;
+
+    public String getRezayat() {
+        return rezayat;
+    }
+
+    public void setRezayat(String rezayat) {
+        this.rezayat = rezayat;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getReferTo() {
+        return referTo;
+    }
+
+    public void setReferTo(String referTo) {
+        this.referTo = referTo;
+    }
 
     public boolean isIsmanager() {
         return ismanager;
@@ -63,6 +97,7 @@ public class CaseEntity {
     public void setIsmanager(boolean ismanager) {
         this.ismanager = ismanager;
     }
+
 
     public int getId() {
         return id;
@@ -110,6 +145,7 @@ public class CaseEntity {
 
     public void setSenderuser(User senderuser) {
         this.senderuser = senderuser;
+        this.setSender(senderuser.getName());
     }
 
     public User getReferTOuser() {
@@ -118,6 +154,7 @@ public class CaseEntity {
 
     public void setReferTOuser(User referTOuser) {
         this.referTOuser = referTOuser;
+        this.setReferTo(referTOuser.getName());
         if (referTOuser.getPosition().equals("manager"))
             this.setIsmanager(true);
     }
@@ -153,4 +190,13 @@ public class CaseEntity {
     public void setFile(File file) {
         this.file = file;
     }
+
+    public List<comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<comment> comments) {
+        this.comments = comments;
+    }
+
 }
