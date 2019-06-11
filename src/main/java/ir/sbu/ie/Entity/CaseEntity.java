@@ -30,15 +30,17 @@ public class CaseEntity {
     @Column(name = "section")
     @Basic
     String section;
-    @Column(name = "sender")
+
 
     @NotNull
 
-
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SENDER_ID")
 
     User sender;
-    @Column(name = "referTo")
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "REFERTO_ID")
     @NotNull
     User referTo;
     @Column(name = "condition")
