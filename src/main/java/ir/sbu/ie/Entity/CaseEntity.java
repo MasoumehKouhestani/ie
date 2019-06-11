@@ -64,13 +64,13 @@ public class CaseEntity {
     String referTo;
     @Basic
     @Column(name = "rezayat")
-    String rezayat;
+    boolean rezayat;
 
-    public String getRezayat() {
+    public boolean isRezayat() {
         return rezayat;
     }
 
-    public void setRezayat(String rezayat) {
+    public void setRezayat(boolean rezayat) {
         this.rezayat = rezayat;
     }
 

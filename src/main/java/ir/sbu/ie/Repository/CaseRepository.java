@@ -15,4 +15,8 @@ public interface CaseRepository extends JpaRepository<CaseEntity, Integer> {
     List<CaseEntity> findquery();
 
     public List<CaseEntity> findReport(@Param("sec") String sec, @Param("typ") String typ, @Param("refTo") User referTo);
+
+    public CaseEntity findById(int id);
+
+    List<CaseEntity> findByReferTo(String referTo);
 }

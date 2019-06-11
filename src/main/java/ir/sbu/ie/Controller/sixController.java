@@ -42,6 +42,20 @@ public class sixController {
     public Object[] userList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return sixService.caseList();
     }
+    @PostMapping("/redirectegdam")
+    @Consumes(MediaType.TEXT_PLAIN)
+    public void requestBody(@RequestBody String caseid,HttpServletRequest request,HttpServletResponse response) throws IOException {
+        System.out.println(caseid);
+        System.out.println(request.getSession().getAttribute("email"));
+        request.getSession().setAttribute("case",caseid);
+        boolean ismanager=sixService.ismanager(request.getSession().getAttribute("email"));
+        if(ismanager==true)
+            response.sendRedirect("seven.html");
+
+
+        else
+            response.sendRedirect("sevenForEmplyee.html");
+    }
 
 
 }

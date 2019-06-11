@@ -11,18 +11,25 @@ import java.util.List;
 
 
 @Service
-public class sixService{
+public class sixService {
 
     @Inject
     private CaseRepository caseRepository;
-
+    @Inject
+    private UserRepository userRepository;
 
     public Object[] caseList() {
 
-        List<CaseEntity> find= caseRepository.findAll();
+        List<CaseEntity> find = caseRepository.findAll();
 
         return find.toArray();
     }
 
 
+    public boolean ismanager(Object email) {
+        User user=userRepository.findByEmail(email.toString());
+        if (user.getPosition().equals("manager"))
+            return true;
+        return false;
+    }
 }
