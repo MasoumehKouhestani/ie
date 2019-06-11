@@ -5,10 +5,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.File;
 import java.util.Date;
-import java.util.HashMap;
 
 @Entity
 @Table(name = "cases")
+@org.hibernate.annotations.NamedQuery(name = "CaseEntity.findReport",
+        query = "SELECT c FROM CaseEntity c where c.section = :sec AND c.type = :typ AND c.referTOuser = :refTo AND c.startdate = :start AND c.enddate = :end "
+)
 public class CaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +21,7 @@ public class CaseEntity {
     @Basic
     @NotNull
     String topic;
-    @Column(name ="description")
+    @Column(name = "description")
     @Basic
     @NotNull
     String description;
@@ -33,23 +35,11 @@ public class CaseEntity {
 
     @Column(name = "ismanager")
     @Basic
-    boolean ismanager=false;
-
-    public boolean isIsmanager() {
-        return ismanager;
-    }
-
-    public void setIsmanager(boolean ismanager) {
-        this.ismanager = ismanager;
-    }
-
-
-
+    boolean ismanager = false;
     @ManyToOne
     @JoinColumn(name = "SENDER_ID")
 
     User senderuser;
-
     @ManyToOne
     @JoinColumn(name = "REFERTO_ID")
     User referTOuser;
@@ -65,6 +55,14 @@ public class CaseEntity {
     @Column(name = "file")
     @Lob
     File file;
+
+    public boolean isIsmanager() {
+        return ismanager;
+    }
+
+    public void setIsmanager(boolean ismanager) {
+        this.ismanager = ismanager;
+    }
 
     public int getId() {
         return id;
@@ -120,7 +118,7 @@ public class CaseEntity {
 
     public void setReferTOuser(User referTOuser) {
         this.referTOuser = referTOuser;
-        if(referTOuser.getPosition().equals("manager"))
+        if (referTOuser.getPosition().equals("manager"))
             this.setIsmanager(true);
     }
 
