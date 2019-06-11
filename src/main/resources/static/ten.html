@@ -76,14 +76,14 @@
       گزارش گیری
 
     </p>
-    <form>
+    <form method="post" action="/getReport">
       <div class="form-group">
         <p class="font-weight-bold headofinput">
           <b class="text-primary " >1.</b>
           گزارش مورد های کدام بخش را می خواهید
 
           ؟   </p>
-        <select class="form-control" name="section">
+        <select class="form-control" name="section" id="section">
           <option value="null">
             --
           </option>
@@ -124,7 +124,7 @@
           اگر مایلید نوع مورد خود را مشخص کنید
 
           .</p>
-        <select class="form-control" name="type">
+        <select class="form-control" name="type" id="type">
           <option value="null">
             --
           </option>
@@ -149,7 +149,7 @@
           گزارش مورد های ارجاع شده به چه کسی را می خواهید
 
           ؟   </p>
-        <input class="form-control" type="text" name="referenceperson" placeholder="نام ونام خانوادگی آن فرد ">
+        <input class="form-control" type="text" name="referenceperson" id="referenceperson" placeholder="نام ونام خانوادگی آن فرد ">
 
         <p class="text-danger">
           <i class="fas fa-exclamation-triangle"></i>
@@ -163,10 +163,10 @@
           .</p>
         <div class="form-inline  ">
           از
-          &nbsp;    <input class="form-control text-right " type="date" name="startdate"  placeholder="تاریخ شروع" style="">
+          &nbsp;    <input class="form-control text-right " type="date" name="startdate" id="startdate" placeholder="تاریخ شروع" style="">
           &nbsp;    &nbsp;    &nbsp;
           تا
-          &nbsp;    <input class="form-control text-right " type="date" name=" finishdate"  placeholder="تاریخ شروع" style="">
+          &nbsp;    <input class="form-control text-right " type="date" name=" finishdate" id="finishdate" placeholder="تاریخ شروع" style="">
         </div>
         <br>
         <input type="submit" class="form-control btn btn-primary" value="گرفتن گزارش ">
