@@ -16,6 +16,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
+    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "senderuser")
+    private List<CaseEntity> sendcases;
+
     public List<CaseEntity> getSendcases() {
         return sendcases;
     }
@@ -32,19 +35,7 @@ public class User {
         this.reccases = reccases;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "user_case_send",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "case_id", referencedColumnName = "ID")
-    )
-    private List<CaseEntity> sendcases;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "user_case_rec",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "case_id", referencedColumnName = "ID")
-    )
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "referTOuser")
     private List<CaseEntity> reccases;
 
 
