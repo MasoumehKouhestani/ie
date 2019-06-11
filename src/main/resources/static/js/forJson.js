@@ -13,7 +13,7 @@ $(document).ready(function () {
       var x = data[i];
 
       var type = ""
-      if (x.type === "shekayet") {
+      if (x.type === "shekayat") {
         type = ' <span class="text-danger shekayattext">\n' +
           '\n' +
           '        شکایت\n' +
@@ -24,7 +24,7 @@ $(document).ready(function () {
           ' انتقاد\n' +
           '  &nbsp;&nbsp;\n' +
           '    </span>';
-      } else if (x.type === "phishnahad") {
+      } else if (x.type === "pishnahad") {
         type = ' <span class="text-success pishnahadtext">\n' +
           '  پیشهاد\n' +
           '  &nbsp;&nbsp;\n' +
@@ -53,7 +53,7 @@ $(document).ready(function () {
       }
 
 
-      if (x.referTo == true) {
+      if (x.ismanager == true) {
         var y = $('<div class=" morddisplay">\n' +
           '            <div class="row ">\n' +
           '                <div class="col-sm-9 mdec">\n' +
@@ -157,6 +157,7 @@ $(document).ready(function () {
           'تاریخ بسته شدن\n' +
           ' :</span>\n' +
           '    <span class="enddate">\n' +
+
           x.enddate +
 
           '\n' +
