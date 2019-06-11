@@ -10,5 +10,5 @@ import java.util.List;
 public interface CaseRepository extends JpaRepository<CaseEntity,Integer> {
 
     @Query(value = "SELECT ID,CONDITION,DESCRIPTION,ENDDATE,FILE,ISMANAGER,SECTION,STARTDATE,TOPIC,TYPE  FROM CASES ", nativeQuery = true)
-    List<Object> findquery();
+    List<CaseEntity> findquery();
 }

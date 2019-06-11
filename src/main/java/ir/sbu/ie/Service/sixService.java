@@ -19,7 +19,7 @@ public class sixService{
 
     public Object[] caseList() {
 
-        List<Object> find= caseRepository.findquery();
+        List<CaseEntity> find= caseRepository.findquery();
 
         return find.toArray();
     }
