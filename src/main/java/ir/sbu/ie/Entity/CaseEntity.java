@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Table(name = "cases")
 @org.hibernate.annotations.NamedQuery(name = "CaseEntity.findReport",
-        query = "SELECT c FROM CaseEntity c where c.section = :sec AND c.type = :typ AND c.referTOuser = :refTo AND c.startdate = :start AND c.enddate = :end "
+        query = "SELECT c FROM CaseEntity c where c.section = :sec AND c.type = :typ AND c.referTOuser = :refTo "
 )
 public class CaseEntity {
     @Id

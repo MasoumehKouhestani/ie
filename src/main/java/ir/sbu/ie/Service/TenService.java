@@ -7,6 +7,9 @@ import ir.sbu.ie.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -17,10 +20,13 @@ public class TenService {
     @Inject
     private UserRepository userRepository;
 
-    public Object[] reportList(String section, String type, String referTo, String startdate, String enddate) {
+    public Object[] reportList(String section, String type, String referTo) throws ParseException {
 
         User refertouser = userRepository.findByName(referTo);
-        List<CaseEntity> find = caseRepository.findReport(section, type, refertouser, startdate, enddate);
+//        Date start = new SimpleDateFormat("yyyy/mm/dd").parse(startdate);
+        Date start = null, end = null;
+//        Date end = new SimpleDateFormat("yyyy/mm/dd").parse(enddate);
+        List<CaseEntity> find = caseRepository.findReport(section, type, refertouser);
         return find.toArray();
     }
 
