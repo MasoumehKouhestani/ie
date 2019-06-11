@@ -16,21 +16,37 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
+    public List<CaseEntity> getSendcases() {
+        return sendcases;
+    }
+
+    public void setSendcases(List<CaseEntity> sendcases) {
+        this.sendcases = sendcases;
+    }
+
+    public List<CaseEntity> getReccases() {
+        return reccases;
+    }
+
+    public void setReccases(List<CaseEntity> reccases) {
+        this.reccases = reccases;
+    }
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "user_case",
+            name = "user_case_send",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "case_id", referencedColumnName = "ID")
     )
-    private List<CaseEntity> cases;
+    private List<CaseEntity> sendcases;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_case_rec",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "case_id", referencedColumnName = "ID")
+    )
+    private List<CaseEntity> reccases;
 
-    public List<CaseEntity> getCases() {
-        return cases;
-    }
-
-    public void setCases(List<CaseEntity> cases) {
-        this.cases = cases;
-    }
 
     public int getId() {
         return id;

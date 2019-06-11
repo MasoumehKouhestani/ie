@@ -7,6 +7,7 @@ import ir.sbu.ie.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @Service
 public class CaseService {
@@ -16,13 +17,23 @@ public class CaseService {
     private UserRepository userRepository;
 
     public boolean saveCase(String referto, CaseEntity newCaseEntity, String senderEmail) {
-        User resultUser;
-        resultUser = userRepository.findByName(referto);
+        User refertouser= userRepository.findByName(referto);
         User sender = userRepository.findByEmail(senderEmail);
-        if (resultUser != null && sender != null && !sender.getPosition().equals("student")) {
+        if (refertouser != null && sender != null && !refertouser.getPosition().equals("student")) {
             newCaseEntity.setSender(sender);
-            newCaseEntity.setReferTo(resultUser);
-            caseRepository.save(newCaseEntity);
+            newCaseEntity.setReferTo(refertouser);
+
+
+            List<CaseEntity> reccases=refertouser.getReccases();
+            reccases.add(newCaseEntity);
+            refertouser.setReccases(reccases);
+            userRepository.save(refertouser);
+            List<CaseEntity> sendcase=sender.getSendcases();
+            sendcase.add(newCaseEntity);
+            sender.setSendcases(sendcase);
+            userRepository.save(sender);
+            
+
             return true;
         }
         return false;

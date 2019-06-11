@@ -40,7 +40,7 @@ public class CaseController {
 
         boolean result = caseService.saveCase(referto, newCaseEntity,senderemail);
         if (result){
-            return "redirect:/fiveForStudent.html";
+            return "redirect:/w2.html";
         }
         return "redirect:/worngreferTo.html";
     }
