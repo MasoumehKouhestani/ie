@@ -29,7 +29,7 @@ public class CaseController {
                             @FormParam("description") String description, @FormParam("file") File file, HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         String senderemail= (String) request.getSession().getAttribute("email");
         CaseEntity newCaseEntity = new CaseEntity();
-        newCaseEntity.setCondition("open");
+        newCaseEntity.setCondition("o");
         newCaseEntity.setDescription(description);
         newCaseEntity.setFile(file);
         newCaseEntity.setSection(section);
