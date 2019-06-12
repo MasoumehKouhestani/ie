@@ -172,11 +172,13 @@ $(document).ready(function(){
           '\n' +
           '                    <br><br>\n' +
           '\n' +
-          '                    <a href="seven.html" class="text-white btn-primary btn btn-block egdam" egdam="' +
+          '                    <button href="seven.html" class="text-white btn-primary btn btn-block egdam" egdam="' +
           ebtn+
+          '" value="' +
+          x.id +
           '">\n' +
           '                        اقدام\n' +
-          '                    </a>\n' +
+          '                    </button>\n' +
           '                    <br>\n' +
           '                </div>\n' +
           '            </div>\n' +
@@ -314,11 +316,13 @@ $(document).ready(function(){
         '\n' +
         '                    <br><br>\n' +
         '\n' +
-        '                    <a href="seven.html" class="text-white btn-primary btn btn-block egdam" egdam="' +
+        '                    <button href="seven.html" class="text-white btn-primary btn btn-block egdam" egdam="' +
         ebtn+
+        '" value="' +
+        x.id +
         '">\n' +
         '                        اقدام\n' +
-        '                    </a>\n' +
+        '                    </button>\n' +
         '                    <br>\n' +
         '                </div>\n' +
         '            </div>\n' +
@@ -362,7 +366,10 @@ $(document).ready(function(){
       );
 
       $('#bodysix').append(m);
+      $('.egdam').click(function () {
+        $.post("/redirectegdam",$(this).val() ,function(d){});
 
+      })
       $(".down").click(function(){//six
 
         $(this).next().next().show()
