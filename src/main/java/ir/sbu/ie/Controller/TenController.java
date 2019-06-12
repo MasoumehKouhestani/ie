@@ -33,11 +33,11 @@ public class TenController {
         return "redirect:/eleven.html";
     }
 
-    @GetMapping("/reportList")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Object[] showReports(HttpServletRequest request, HttpServletResponse response) throws ParseException {
-
-       return tenService.reportList((String) request.getSession().getAttribute("section"),(String) request.getSession().getAttribute("typr"),
-               (String) request.getSession().getAttribute("referenceperson"));
-    }
+//    @GetMapping("/reportList")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Object[] showReports(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+//
+//       return tenService.reportList((String) request.getSession().getAttribute("section"),(String) request.getSession().getAttribute("typr"),
+//               (String) request.getSession().getAttribute("referenceperson"));
+//    }
 }
