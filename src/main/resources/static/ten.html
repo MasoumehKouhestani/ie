@@ -5,7 +5,7 @@
 
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/bootstrapValidator.css"/>
   <link href="css/ten.css" rel="stylesheet">
 
 
@@ -13,6 +13,9 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/program.js"></script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
   <meta charset="UTF-8">
   <title>
     گزارش گیری
@@ -51,7 +54,7 @@
       <li class="nav-item"><a href="nine.html" class="nav-link">
         مدیریت کاربر
       </a></li>
-      <li class="nav-item activenavitem"><a href="ten.html" class="nav-link text-white">
+      <li class="nav-item activenavitem rounded"><a href="ten.html" class="nav-link text-white">
         گزارش گیری
       </a></li>
     </ul>
@@ -59,9 +62,7 @@
   </div>
   <div class="col-sm-2">
 
-        <span  >
-            زهرا محمدی
-        </span>
+
     <i class="fas fa-user-circle fa-2x"></i>
   </div>
 
@@ -76,8 +77,11 @@
       گزارش گیری
 
     </p>
-    <form method="post" action="/getReport">
-      <div class="form-group">
+    <form method="post" action="/getReport" class="form-group fff form-horizontal"
+          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+
         <p class="font-weight-bold headofinput">
           <b class="text-primary " >1.</b>
           گزارش مورد های کدام بخش را می خواهید
@@ -149,12 +153,11 @@
           گزارش مورد های ارجاع شده به چه کسی را می خواهید
 
           ؟   </p>
-        <input class="form-control" type="text" name="referenceperson" id="referenceperson" placeholder="نام ونام خانوادگی آن فرد ">
+      <div class="form-group">
+        <input class="form-control" type="text" name="referenceperson" id="referenceperson" placeholder="نام ونام خانوادگی آن فرد " data-bv-notempty="true"
+               data-bv-notempty-message="نمی تواند خالی باشد !"/>
+      </div>
 
-        <p class="text-danger">
-          <i class="fas fa-exclamation-triangle"></i>
-          چنین فردی وجود ندارد
-          ! </p>
         <br>
         <p class="font-weight-bold headofinput">
           <b class="text-primary " >4.</b>
@@ -169,13 +172,18 @@
           &nbsp;    <input class="form-control text-right " type="date" name=" finishdate" id="finishdate" placeholder="تاریخ شروع" style="">
         </div>
         <br>
-        <input type="submit" class="form-control btn btn-primary" value="گرفتن گزارش ">
-      </div>
+        <input type="submit" class="form-control btn  btn-primary" value="گرفتن گزارش "/>
     </form>
   </div>
   <div class="col-sm-1">
   </div>
 </div>
 <br><br><br><br>
+<script>
+  $(document).ready(function () {
+    $('.fff').bootstrapValidator();
+  });
+</script>
+</body>
 </body>
 </html>
