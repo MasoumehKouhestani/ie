@@ -27,7 +27,7 @@ public class eightService {
 
     public Object[] caseList(String email) {
         User user=userRepository.findByEmail(email);
-        List<CaseEntity> find=caseRepository.findByReferTo(user.getName());
+        List<CaseEntity> find=caseRepository.findBySender(user.getName());
         return find.toArray();
     }
 }

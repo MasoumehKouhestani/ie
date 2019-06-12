@@ -31,8 +31,8 @@ public class eightController {
     }
     @PostMapping("/rezayat")
     public void rezayat(@RequestBody String caseid,HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int id = Integer.parseInt(request.getSession().getAttribute("case").toString());
-        System.out.println(id);
+        caseid=caseid.substring(0,caseid.length()-1);
+       int id=Integer.parseInt(caseid);
          eightService.setrezayat(id, true);
 
             response.sendRedirect("w2.html");
@@ -41,8 +41,8 @@ public class eightController {
     }
     @PostMapping("/narezayat")
     public void narezayat(@RequestBody String caseid,HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int id = Integer.parseInt(request.getSession().getAttribute("case").toString());
-        System.out.println(id);
+        caseid=caseid.substring(0,caseid.length()-1);
+        int id=Integer.parseInt(caseid);
         eightService.setrezayat(id, false);
 
         response.sendRedirect("w2.html");

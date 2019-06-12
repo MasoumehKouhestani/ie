@@ -166,7 +166,7 @@ $(document).ready(function () {
           '\n' +
           '                    <br><br>\n' +
           '\n' +
-          '                    <button href="seven.html" class="text-white btn-primary btn btn-block egdam" egdam="' +
+          '                    <button class="text-white btn-primary btn btn-block egdam" egdam="' +
           ebtn +
           '" value="' +
           x.id +
@@ -310,7 +310,7 @@ $(document).ready(function () {
         '\n' +
         '                    <br><br>\n' +
         '\n' +
-        '                    <button href="seven.html" class="text-white btn-primary btn btn-block egdam" egdam="' +
+        '                    <button  class="text-white btn-primary btn btn-block egdam" egdam="' +
         ebtn +
         '" value="' +
         x.id +

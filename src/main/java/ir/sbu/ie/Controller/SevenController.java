@@ -31,7 +31,7 @@ public class SevenController {
     @PostMapping("/changereferto")
     @Produces(MediaType.TEXT_HTML)
     @Consumes("application/x-www-form-urlencoded")
-    public void changeReferTo(@FormParam("name") String name, @FormParam("des") String des, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void changeReferTo(@FormParam("name") String name, @FormParam("des1") String des, HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getSession().getAttribute("case").toString());
         System.out.println(id);
         String email = request.getSession().getAttribute("email").toString();
@@ -46,7 +46,7 @@ public class SevenController {
     @PostMapping("/changestate")
     @Produces(MediaType.TEXT_HTML)
     @Consumes("application/x-www-form-urlencoded")
-    public void changestate(@FormParam("state") String state, @FormParam("des") String des, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void changestate(@FormParam("s") String state, @FormParam("des") String des, HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getSession().getAttribute("case").toString());
         System.out.println(id);
         String email = request.getSession().getAttribute("email").toString();

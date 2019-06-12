@@ -4,13 +4,17 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrapValidator.css"/>
   <link href="css/seven.css" rel="stylesheet">
   <script src="js/popper.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/forSevenjson.js"></script>
-  <script src="js/egdamEmptyFieldError.js"></script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
+
   <meta charset="UTF-8">
   <title>
     اقدام
@@ -56,7 +60,6 @@
 
 </div>
 <br><br><br><br><br>
-
 <div class="row">
   <div class="col-sm-1">
   </div>
@@ -162,14 +165,18 @@
       <p class="text-right text-primary font-weight-bold">
         تغییر وضعیت
         : </p>
-      <form name="pos_change" >
+      <form name="pos_change" class=" fff form-group form-horizontal"
+            data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+            data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+            data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
         <div class="form-group text-right">
 
           <p class="font-weight-bold ">
             <b class="text-primary ">1.</b>
             وضعیت مورد نظر خود را انتخاب کنید
             .</p>
-          <select class="form-control text-secondary" id="status">
+
+          <select class="form-control text-secondary" id="s" name="s">
             <option value="c">
               بسته
             </option>
@@ -190,20 +197,21 @@
             <b class="text-primary ">2.</b>
             توضیحات مورد نظر خود را بنویسید
             .</p>
-
-          <textarea class="form-control text-right text-secondary t1" rows="7" name="egdam_pos_dsc">
+          <div class="form-group">
+          <textarea class="form-control text-right text-secondary t1" rows="7" name="des" id="des"
+                    data-bv-notempty="true"
+                    data-bv-notempty-message="توضیحات نمی تواند خالی باشد !">
   توضیحات
                 </textarea>
+          </div>
 
-          <p class="text-danger text-right egdam_pos_dsc">
-            <i class="fas fa-exclamation-triangle"></i>
-            این فیلد اجباری است! </p>
           <br>
-          <input type="submit" class="btn btn-info form-control f" value="ثبت" id="submit1">
+          <input type="submit" class="btn btn-info form-control f  submit-btn" value="ثبت" id="submit1">
 
         </div>
 
       </form>
+      <br><br><br>
     </div>
   </div>
   <div class="col-sm bg-white" id="change-ref">
@@ -212,36 +220,42 @@
       <p class="text-right text-primary font-weight-bold">
         تغییر ارجاع
         : </p>
-      <form name="erja_change">
-        <div class="form-group text-right">
-
-          <p class="font-weight-bold ">
-            <b class="text-primary ">1.</b>
-            نام فردی که میخواهید به ان ارجاع دهید را وارد کنید
-            .</p>
-          <input name="name_egdam" type="text" class="form-control i1" placeholder="نام و نام خانوادگی">
+      <form name="erja_change " class="text-right fff  form-group form-horizontal"
+            data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+            data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+            data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
 
 
-          <p class="text-danger text-right name_egdam">
-            <i class="fas fa-exclamation-triangle ee7"></i>
-            چنین فردی در سیستم وجود ندارد
-            ! </p>
-          <p class="font-weight-bold headofinput">
-            <b class="text-primary ">2.</b>
-            توضیحات مورد نظر خود را بنویسید
-            .</p>
-          <textarea class="form-control text-right text-secondary t2" rows="7" name="egdam_erja_dsc">
-  توضیحات
-                </textarea>
-          <p class="text-danger text-right egdam_erja_dsc e7"  >
-            <i class="fas fa-exclamation-triangle"></i>
-            این فیلد اجباری است!</p>
-          <br><br>
-          <input type="submit" class="btn btn-info form-control f" value="ثبت" id="submit2">
-
+        <p class="font-weight-bold text-right">
+          <b class="text-primary text-right text-right">1.</b>
+          نام فردی که میخواهید به ان ارجاع دهید را وارد کنید
+          .</p>
+        <div class="form-group">
+          <input name="name" id="name" type="text" class="form-control i1" placeholder="نام و نام خانوادگی"
+                 data-bv-notempty="true"
+                 data-bv-notempty-message="نام ارجاع گیرنده نمی تواند خالی باشد !"/>
         </div>
 
+        <br><br>
+        <p class="font-weight-bold headofinput text-right">
+          <b class="text-primary text-right ">2.</b>
+          توضیحات مورد نظر خود را بنویسید
+          .</p>
+        <div class="form-group">
+          <textarea class="form-control text-right text-secondary t2" rows="7" name="des1" id="des1"
+                    data-bv-notempty="true"
+                    data-bv-notempty-message="توضیحات نمی تواند خالی باشد !">
+  توضیحات
+                </textarea>
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="submit" class="btn btn-info form-control  f" value="ثبت" id="submit2">
+        </div>
+
+
       </form>
+      <br><br><br>
     </div>
   </div>
   <div class="col-sm-1"></div>
@@ -299,4 +313,9 @@
 </div>
 
 </body>
+<script>
+  $(document).ready(function () {
+    $('.fff').bootstrapValidator();
+  });
+</script>
 </html>

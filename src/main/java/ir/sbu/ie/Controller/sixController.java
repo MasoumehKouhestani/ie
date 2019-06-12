@@ -51,6 +51,7 @@ public class sixController {
     @PostMapping("/redirectegdam")
     @Consumes(MediaType.TEXT_PLAIN)
     public void requestBody(@RequestBody String caseid,HttpServletRequest request,HttpServletResponse response) throws IOException {
+        caseid=caseid.substring(0,caseid.length()-1);
         System.out.println(caseid);
         System.out.println(request.getSession().getAttribute("email"));
         request.getSession().setAttribute("case",caseid);

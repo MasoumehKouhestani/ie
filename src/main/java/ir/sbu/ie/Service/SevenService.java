@@ -36,6 +36,8 @@ public class SevenService {
             comment.add(x);
             c.setComments(comment);
             c.setReferTOuser(refer);
+            if(!refer.getPosition().equals("manager"))
+                c.setIsmanager(false);
             caseRepository.save(c);
             return true;
         }

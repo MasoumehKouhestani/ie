@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $.get("json/case.json", function (data) {
+    $.get("/listofcaseeight", function (data) {
         var modal = "modal";
 
         for(var i=0;i<data.length;i++){
@@ -10,45 +10,45 @@ $(document).ready(function() {
             var x=data[i];
 
             var type=""
-            if(x.type==="shekayet"){
+            if(x.type==="s"){
                 type=' <span class="text-danger shekayattext">\n' +
                     '\n' +
                     '        شکایت\n' +
                     '  &nbsp;&nbsp;\n' +
                     '    </span>';}
-            else if(x.type==="enteghad"){
+            else if(x.type==="e"){
                 type='  <span class="text-warning enteghdtext">\n' +
                     ' انتقاد\n' +
                     '  &nbsp;&nbsp;\n' +
                     '    </span>';
             }
-            else if(x.type==="phishnahad"){
+            else if(x.type==="p"){
                 type=' <span class="text-success pishnahadtext">\n' +
                     '  پیشهاد\n' +
                     '  &nbsp;&nbsp;\n' +
                     '    </span>';
             }
-            else if(x.type==="darkhast"){
+            else if(x.type==="d"){
                 type='<span class="text-info darkhasttext">\n' +
                     '  درخواست\n' +
                     '  &nbsp;&nbsp;\n' +
                     '    </span>';
             }
             var condition=""
-            if(x.condition==="open"){
+            if(x.condition==="o"){
                 condition=' <span class="text-danger open ">\n' +
                     'باز\n' +
                     '    </span>';
             }
-            else if (x.condition==="close") {
+            else if (x.condition==="c") {
                 condition='<span class="text-success  "> بسته</span>';
             }
-            else if (x.condition==="inqueue") {
+            else if (x.condition==="i") {
                 condition='<span class="text-info inqueue">\n' +
                     'در حال بررسی\n' +
                     '    </span>';
             }
-            else if (x.condition==="delay") {
+            else if (x.condition==="d") {
                 condition='                    <span class="text-warning postponed">\n' +
                     'تعویق\n' +
                     '    </span>\n';
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 
 
-            if(x.sender=="نادر نادری"){
+            if(true){
                 var y=$('<div class=" morddisplay">\n' +
                     '            <div class="row ">\n' +
                     '                <div class="col-sm-9 mdec">\n' +
@@ -173,11 +173,15 @@ $(document).ready(function() {
                     '' +'     <br><br>\n' +
                     '\n' +
                     '                   <form class="form-group form-inline">\n' +
-                    '                       <button class="form-control btn btn-success btn-lgs rezayat-btn " >\n' +
+                    '                       <button class="form-control btn btn-success btn-lgs rezayat-btn " value="' +
+                  x.id +
+                  '" >\n' +
                     '                           &nbsp;&nbsp; رضایت&nbsp;&nbsp;\n' +
                     '                       </button>\n' +
                     '                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n' +
-                    '                       <button class="form-control btn btn-danger narezayat-btn ">\n' +
+                    '                       <button class="form-control btn btn-danger narezayat-btn " value="' +
+                  x.id +
+                  '">\n' +
                     '                          عدم رضایت\n' +
                     '                       </button>\n' +
                     '                   </form>\n' +
@@ -201,14 +205,14 @@ $(document).ready(function() {
             }
 
             var mm="";
-            for(var j=0;j<data[i].other.length;j++){
+            for(var j=0;j<data[i].comments.length;j++){
                 mm=mm+'<div class="boxinmodal text-sm-right ">\n' +
                     '                            <p class="text-primary font-weight-bold">\n' +
-                    data[i].other[j].name+
+                    data[i].comments[j].name+
                     '\n' +
                     '                            </p>\n' +
                     '                            <p class="text-secondary">\n' +
-                    data[i].other[j].des+
+                    data[i].comments[j].des+
                     '\n' +
                     '                            </p>\n' +
                     '\n' +
@@ -252,7 +256,16 @@ $(document).ready(function() {
             );
 
             $('body').append(m);
+          $('.rezayat-btn').click(function () {
+            $.post("/rezayat",$(this).val() ,function(d){});
 
+
+          });
+          $('.narezayat-btn').click(function () {
+            $.post("/narezayat",$(this).val() ,function(d){});
+
+
+          })
             $(".down").click(function(){//six
 
                 $(this).next().next().show()

@@ -1,49 +1,49 @@
 $(document).ready(function(){
-    $.get("json/case.json", function(data){
+    $.get("eghdam", function(data){
 
-        var i=1;
+
 
         modal="m"+i;
         var type=""
-        if(data[i].type==="shekayet"){
+        if(data.type==="s"){
             type=' <span class="text-danger shekayattext">\n' +
                 '\n' +
                 '        شکایت\n' +
                 '  &nbsp;&nbsp;\n' +
                 '    </span>';}
-        else if(data[i].type==="enteghad"){
+        else if(data.type==="e"){
             type='  <span class="text-warning enteghdtext">\n' +
                 ' انتقاد\n' +
                 '  &nbsp;&nbsp;\n' +
                 '    </span>';
         }
-        else if(data[i].type==="phishnahad"){
+        else if(data.type==="p"){
             type=' <span class="text-success pishnahadtext">\n' +
                 '  پیشهاد\n' +
                 '  &nbsp;&nbsp;\n' +
                 '    </span>';
         }
-        else if(data[i].type==="darkhast"){
+        else if(data.type==="d"){
             type='<span class="text-info darkhasttext">\n' +
                 '  درخواست\n' +
                 '  &nbsp;&nbsp;\n' +
                 '    </span>';
         }
         var condition=""
-        if(data[i].condition==="open"){
+        if(data.condition==="o"){
             condition=' <span class="text-danger open ">\n' +
                 'باز\n' +
                 '    </span>';
         }
-        else if (data[i].condition==="close") {
+        else if (data.condition==="c") {
             condition='<span class="text-success  "> بسته</span>';
         }
-        else if (data[i].condition==="inqueue") {
+        else if (data.condition==="i") {
             condition='<span class="text-info inqueue">\n' +
                 'در حال بررسی\n' +
                 '    </span>';
         }
-        else if (data[i].condition==="delay") {
+        else if (data.condition==="d") {
             condition='                    <span class="text-warning postponed">\n' +
                 'تعویق\n' +
                 '    </span>\n';
@@ -59,7 +59,7 @@ $(document).ready(function(){
                 '            <span class="title">\n' +
 
 
-                data[i].topic+
+                data.topic+
 
 
                 '            </span>\n' +
@@ -68,7 +68,7 @@ $(document).ready(function(){
                 '                    <div class="dec text-right text-secondary tozihat">\n' +
 
 
-                data[i].description+
+                data.description+
 
                 '\n' +
                 '                    </div>\n' +
@@ -110,7 +110,7 @@ $(document).ready(function(){
                 ' </span>\n' +
                 '    <span class="section">\n' +
 
-                data[i].section+
+                data.section+
 
                 '\n' +
                 '    </span>\n' +
@@ -119,7 +119,7 @@ $(document).ready(function(){
                 '    ارسال کننده\n' +
                 ' :</span>\n' +
                 '    <span class="sender">\n' +
-                data[i].sender+
+                data.sender+
 
                 '\n' +
                 '    </span>\n' +
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 '  ارجاع به\n' +
                 ' :</span>\n' +
                 '    <span class="referto">\n' +
-                data[i].referTo+
+                data.referTo+
                 '\n' +
                 '    </span>\n' +
                 '                    <br><br>\n' +
@@ -142,7 +142,7 @@ $(document).ready(function(){
                 'تاریخ ثبت\n' +
                 ' :</span>\n' +
                 '    <span class="startdate" >\n' +
-                data[i].startdate+
+                data.startdate+
 
                 '\n' +
                 '    </span>\n' +
@@ -151,7 +151,7 @@ $(document).ready(function(){
                 'تاریخ بسته شدن\n' +
                 ' :</span>\n' +
                 '    <span class="enddate">\n' +
-                data[i].enddate+
+                data.enddate+
 
                 '\n' +
                 '    </span>\n' +
@@ -172,14 +172,14 @@ $(document).ready(function(){
 
 
         var mm="";
-        for(var j=0;j<data[i].other.length;j++){
+        for(var j=0;j<data.comments.length;j++){
             mm=mm+'<div class="boxinmodal text-sm-right ">\n' +
                 '                            <p class="text-primary font-weight-bold">\n' +
-                data[i].other[j].name+
+                data.other[j].name+
                 '\n' +
                 '                            </p>\n' +
                 '                            <p class="text-secondary">\n' +
-                data[i].other[j].des+
+                data.other[j].des+
                 '\n' +
                 '                            </p>\n' +
                 '\n' +

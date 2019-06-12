@@ -3,12 +3,14 @@
  */
 $(document).ready(function() {
   $('.rezayat-btn').click(function () {
+    $.post("/rezayat",$(this).val() ,function(d){});
     $('.sabtnarezayat').hide()
     $('.sabtrezayat').show()
     $('.sabtrezayat').fadeOut(2000)
 
   });
   $('.narezayat-btn').click(function () {
+    $.post("/narezayat",$(this).val() ,function(d){});
     $('.sabtrezayat').hide()
     $('.sabtnarezayat').show()
     $('.sabtnarezayat').fadeOut(2000)
