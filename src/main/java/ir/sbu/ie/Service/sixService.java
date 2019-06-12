@@ -32,4 +32,9 @@ public class sixService {
             return true;
         return false;
     }
+
+    public Object[] emcaseList(String email) {
+        User user=userRepository.findByEmail(email);
+        return caseRepository.findByReferTo(user.getName()).toArray();
+    }
 }

@@ -39,8 +39,14 @@ public class sixController {
 
     @GetMapping("/listofcase")
     @Produces(MediaType.APPLICATION_JSON)
-    public Object[] userList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public Object[] macaseList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return sixService.caseList();
+    }
+    @GetMapping("/listofcaseem")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Object[] emcaseList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String email = request.getSession().getAttribute("email").toString();
+        return sixService.emcaseList(email);
     }
     @PostMapping("/redirectegdam")
     @Consumes(MediaType.TEXT_PLAIN)

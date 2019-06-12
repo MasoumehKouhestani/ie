@@ -12,6 +12,9 @@ import java.util.List;
 @org.hibernate.annotations.NamedQuery(name = "CaseEntity.findReport",
         query = "SELECT c FROM CaseEntity c where c.section = :sec AND c.type = :typ AND c.referTOuser = :refTo "
 )
+//@org.hibernate.annotations.NamedQuery(name = "CaseEntity.findemlist",
+//        query = "SELECT c FROM CaseEntity c where  c.referTOuser.email = :email "
+//)
 public class CaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
