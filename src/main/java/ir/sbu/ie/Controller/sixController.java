@@ -42,26 +42,27 @@ public class sixController {
     public Object[] macaseList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return sixService.caseList();
     }
+
     @GetMapping("/listofcaseem")
     @Produces(MediaType.APPLICATION_JSON)
     public Object[] emcaseList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getSession().getAttribute("email").toString();
         return sixService.emcaseList(email);
     }
+
     @PostMapping("/redirectegdam")
     @Consumes(MediaType.TEXT_PLAIN)
-    public void requestBody(@RequestBody String caseid,HttpServletRequest request,HttpServletResponse response) throws IOException {
-        caseid=caseid.substring(0,caseid.length()-1);
+    public void requestBody(@RequestBody String caseid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        caseid = caseid.substring(0, caseid.length() - 1);
         System.out.println(caseid);
-        System.out.println(request.getSession().getAttribute("email"));
-        request.getSession().setAttribute("case",caseid);
-        boolean ismanager=sixService.ismanager(request.getSession().getAttribute("email"));
-        if(ismanager==true)
-            response.sendRedirect("seven.html");
-
-
-        else
-            response.sendRedirect("sevenForEmplyee.html");
+        request.getSession().setAttribute("case", caseid);
+//        boolean ismanager=sixService.ismanager(request.getSession().getAttribute("email"));
+//        if(ismanager==true)
+//            response.sendRedirect("seven.html");
+//
+//
+//        else
+//            response.sendRedirect("sevenForEmplyee.html");
     }
 
 

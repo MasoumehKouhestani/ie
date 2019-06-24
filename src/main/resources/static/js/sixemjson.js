@@ -172,13 +172,13 @@ $(document).ready(function(){
           '\n' +
           '                    <br><br>\n' +
           '\n' +
-          '                    <button  class="text-white btn-primary btn btn-block egdam" egdam="' +
-          ebtn+
-          '" value="' +
-          x.id +
-          '">\n' +
-          '                        اقدام\n' +
-          '                    </button>\n' +
+          '<button  class="text-white btn-primary btn btn-block egdam" egdam="' +
+        ebtn +
+        '" value="' +
+        x.id +
+        '">\n' +
+        '                        اقدام\n' +
+        '                    </button>\n' +
           '                    <br>\n' +
           '                </div>\n' +
           '            </div>\n' +
@@ -368,6 +368,7 @@ $(document).ready(function(){
       $('#bodysix').append(m);
       $('.egdam').click(function () {
         $.post("/redirectegdam",$(this).val() ,function(d){});
+        window.location.href="seven.html";
 
       })
       $(".down").click(function(){//six

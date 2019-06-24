@@ -362,8 +362,10 @@ $(document).ready(function () {
       $('.egdam').click(function () {
         $.post("/redirectegdam", $(this).val(), function (d) {
         });
+        window.location.href="sevenForEmplyee.html";
 
-      })
+      });
+
       $(".down").click(function () {//six
 
         $(this).next().next().show()

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $.get("eghdam", function(data){
+    $.get("/eghdam", function(data){
 
 
 
