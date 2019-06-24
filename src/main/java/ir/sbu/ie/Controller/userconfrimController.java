@@ -53,6 +53,7 @@ public class userconfrimController {
     @Produces (MediaType.TEXT_PLAIN)
     public String unconfrimed(@RequestBody String username,HttpServletRequest request, HttpServletResponse response){
         username=username.substring(0,username.length()-1);
+        System.out.println(username);
         return userconfirmdService.unconfirmd(username);
     }
 

@@ -40,14 +40,13 @@ $(document).ready(function(){
 
           $(this).next().next().hide(4000);
 
-
       });
       $('.b2').click(function() {
         $.post("/unconfrimed",$(this).val() ,function(d){});
 
             $(this).next().hide();
             $(this).next().next().show();
-
+        $(this).next().next().hide(4000);
 
 
       });
