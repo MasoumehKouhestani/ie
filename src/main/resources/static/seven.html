@@ -172,7 +172,8 @@
       <p class="text-right text-primary font-weight-bold">
         تغییر وضعیت
         : </p>
-      <form name="pos_change" class=" fff form-group form-horizontal"
+
+      <form name="pos_change" method="post" action="/changestate" class=" fff form-group form-horizontal"
             data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
             data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
             data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
@@ -213,8 +214,7 @@
           </div>
 
           <br>
-          <input type="submit" class="btn btn-info form-control f  submit-btn" value="ثبت" id="submit1">
-
+          <button type="submit" class="btn btn-info form-control " value="ثبت" id="submit1">ثبت</button>
         </div>
 
       </form>
@@ -227,7 +227,7 @@
       <p class="text-right text-primary font-weight-bold">
         تغییر ارجاع
         : </p>
-      <form name="erja_change " class="text-right fff  form-group form-horizontal"
+      <form name="erja_change " method="post" action="/changereferto" class="text-right fff  form-group form-horizontal"
             data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
             data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
             data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
@@ -257,7 +257,7 @@
           </div>
           <br>
           <div class="form-group">
-          <input type="submit" class="btn btn-info form-control  f" value="ثبت" id="submit2">
+            <button type="submit" class="btn btn-info form-control " value="ثبت" id="submit2">ثبت</button>
           </div>
 
 

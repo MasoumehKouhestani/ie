@@ -172,19 +172,6 @@ $(document).ready(function() {
           '\n' +
           '' +'     <br><br>\n' +
           '\n' +
-          '                   <form class="form-group form-inline">\n' +
-          '                       <button class="form-control btn btn-success btn-lgs rezayat-btn " value="' +
-          x.id +
-          '" >\n' +
-          '                           &nbsp;&nbsp; رضایت&nbsp;&nbsp;\n' +
-          '                       </button>\n' +
-          '                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n' +
-          '                       <button class="form-control btn btn-danger narezayat-btn " value="' +
-          x.id +
-          '">\n' +
-          '                          عدم رضایت\n' +
-          '                       </button>\n' +
-          '                   </form>\n' +
           '                    <br>\n' +
           '                    <div class="text-right ">\n' +
           '                       <b class="text-success sabtrezayat"> رضایت شما ثبت شد\n' +

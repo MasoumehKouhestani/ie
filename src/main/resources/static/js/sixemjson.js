@@ -368,7 +368,7 @@ $(document).ready(function(){
       $('#bodysix').append(m);
       $('.egdam').click(function () {
         $.post("/redirectegdam",$(this).val() ,function(d){});
-        window.location.href="seven.html";
+        window.location.href="sevenForEmplyee.html";
 
       })
       $(".down").click(function(){//six

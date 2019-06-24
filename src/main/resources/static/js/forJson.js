@@ -362,7 +362,7 @@ $(document).ready(function () {
       $('.egdam').click(function () {
         $.post("/redirectegdam", $(this).val(), function (d) {
         });
-        window.location.href="sevenForEmplyee.html";
+        window.location.href="seven.html";
 
       });
 

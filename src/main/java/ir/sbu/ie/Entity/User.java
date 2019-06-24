@@ -75,7 +75,7 @@ public class User {
     private String position;
     @Basic
     @Column(name = "section")
-    private String section;
+    private String section="ثبت نشده";
 
     public String getEmail() {
         return email;

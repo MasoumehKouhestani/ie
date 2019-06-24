@@ -35,10 +35,10 @@ public class CaseEntity {
     String type;
     @Column(name = "section")
     @Basic
-    String section;
+    String section="مشخص نشده";
     @Column(name = "ismanager")
     @Basic
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     List<comment> comments;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "SENDER_ID")
